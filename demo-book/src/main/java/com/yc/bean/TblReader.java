@@ -14,7 +14,6 @@ public class TblReader {
 	@Id //主键注解
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
 	private Integer reader_id;
-	@Column()
 	private String reader_name;
 	private String reader_password;
 	private String reader_xame;

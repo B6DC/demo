@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -37,7 +38,7 @@
 						<li><a href="tbl_login.html">退出</a></li>
 				</ul>
 			</li>
-				<li id="Hui-msg"> <a href="tbl_codeing.html" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
+				<li id="Hui-msg"> <a href="tbl_codeing.jsp" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
 				<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
 					<ul class="dropDown-menu menu radius box-shadow">
 						<li><a href="javascript:;" data-val="default" title="默认（黑色）">默认（黑色）</a></li>
@@ -59,7 +60,7 @@
 			<dt><i class="Hui-iconfont">&#xe616;</i> 书籍管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="tbl_book.html" data-title="书籍管理" href="javascript:void(0)">书籍列表</a></li>
+					<li><a data-href="findAllBook.action" data-title="书籍管理" href="javascript:void(0)">书籍列表</a></li>
 			</ul>
 		</dd>
 	</dl>
@@ -67,7 +68,7 @@
 			<dt><i class="Hui-iconfont">&#xe613;</i> 订单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="tbl_orders.html" data-title="订单管理" href="javascript:void(0)">订单列表</a></li>
+					<li><a data-href="findAllOrders.action" data-title="订单管理" href="javascript:void(0)">订单列表</a></li>
 			</ul>
 		</dd>
 	</dl>
@@ -75,7 +76,7 @@
 			<dt><i class="Hui-iconfont">&#xe620;</i> 退单管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="tbl_record.html" data-title="退单管理" href="javascript:void(0)">退单列表</a></li>
+					<li><a data-href="findAllRecord.action" data-title="退单管理" href="javascript:void(0)">退单列表</a></li>
 			</ul>
 		</dd>
 	</dl>
@@ -83,7 +84,7 @@
 			<dt><i class="Hui-iconfont">&#xe622;</i> 评论管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="tbl_comment.html" data-title="评论列表" href="javascript:void(0)">评论列表</a></li>
+					<li><a data-href="findAllComment.action" data-title="评论列表" href="javascript:void(0)">评论列表</a></li>
 			</ul>
 		</dd>
 	</dl>
@@ -91,7 +92,7 @@
 			<dt><i class="Hui-iconfont">&#xe60d;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="tbl_reader.html" data-title="用户列表" href="javascript:;">用户列表</a></li>
+					<li><a data-href="findAllReader.action" data-title="用户列表" href="javascript:;">用户列表</a></li>
 			</ul>
 		</dd>
 	</dl>
@@ -99,7 +100,7 @@
 			<dt><i class="Hui-iconfont">&#xe62d;</i> 员工管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="tbl_manage.html" data-title="员工列表" href="javascript:void(0)">员工列表</a></li>
+					<li><a data-href="findAllManage.action" data-title="员工列表" href="javascript:void(0)">员工列表</a></li>
 			</ul>
 		</dd>
 	</dl>

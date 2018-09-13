@@ -8,57 +8,60 @@ public class TblManage {
 	
 	@Id //主键注解
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
-	private Integer manage_Id;
-	@Column()
-	private String manage_Name;
-	private String manage_Password;
-	private String manage_phone;
-	private String manage_email;
-	private String manage_power;
+	private Integer manage_id;
+	@Column(name="manage_name")
+	private String managename;
+	@Column(name="manage_password")
+	private String managepassword;
+	@Column(name="manage_phone")
+	private String managephone;
+	@Column(name="manage_email")
+	private String manageemail;
+	@Column(name="manage_power")
+	private String managepower;
 	
-	public Integer getManage_Id() {
-		return manage_Id;
+	public Integer getManage_id() {
+		return manage_id;
 	}
-	public void setManage_Id(Integer manage_Id) {
-		this.manage_Id = manage_Id;
+	public void setManage_id(Integer manage_id) {
+		this.manage_id = manage_id;
 	}
-	public String getManage_Name() {
-		return manage_Name;
+	public String getManagename() {
+		return managename;
 	}
-	public void setManage_Name(String manage_Name) {
-		this.manage_Name = manage_Name;
+	public void setManagename(String managename) {
+		this.managename = managename;
 	}
-	public String getManage_Password() {
-		return manage_Password;
+	public String getManagepassword() {
+		return managepassword;
 	}
-	public void setManage_Password(String manage_Password) {
-		this.manage_Password = manage_Password;
+	public void setManagepassword(String managepassword) {
+		this.managepassword = managepassword;
 	}
-	public String getManage_phone() {
-		return manage_phone;
+	public String getManagephone() {
+		return managephone;
 	}
-	public void setManage_phone(String manage_phone) {
-		this.manage_phone = manage_phone;
+	public void setManagephone(String managephone) {
+		this.managephone = managephone;
 	}
-	public String getManage_email() {
-		return manage_email;
+	public String getManageemail() {
+		return manageemail;
 	}
-	public void setManage_email(String manage_email) {
-		this.manage_email = manage_email;
+	public void setManageemail(String manageemail) {
+		this.manageemail = manageemail;
 	}
-	public String getManage_power() {
-		return manage_power;
+	public String getManagepower() {
+		return managepower;
 	}
-	public void setManage_power(String manage_power) {
-		this.manage_power = manage_power;
+	public void setManagepower(String managepower) {
+		this.managepower = managepower;
 	}
 	
-	@Override
-	public String toString() {
-		return "TblManage [manage_Id=" + manage_Id + ", manage_Name=" + manage_Name + ", manage_Password="
-				+ manage_Password + ", manage_phone=" + manage_phone + ", manage_email=" + manage_email
-				+ ", manage_power=" + manage_power + "]";
-	}
+	
+	
+	
+	
+	
 	
 	
 	

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -25,7 +27,7 @@
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 书籍管理 <span class="c-gray en">&gt;</span> 书籍列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	<div class="text-c">
-	 <span class="select-box inline">
+	 <span class="select-box inline"></span>
 		<input type="text" name="" id="" placeholder=" 书名" style="width:250px" class="input-text">
 		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
 	</div>
@@ -36,6 +38,8 @@
 					<th width="25"><input type="checkbox" name="" value=""></th>
 					<th width="80">编号</th>
 					<th width="80">书号</th>
+					<th width="80">书名</th>
+					<th width="80">类别</th>
 					<th width="80">作者</th>
 					<th width="100">出版社</th>
 					<th width="120">出版时间</th>
@@ -46,18 +50,22 @@
 				</tr>
 			</thead>
 			<tbody>
+			<c:forEach items="${list }" var="u">
 				<tr class="text-c">
 					<td><input type="checkbox" value="" name=""></td>
-					<td>10001</td>
-					<td>10001</td>
-					<td>xxx</td>
-					<td>xxx</td>
-					<td>xxx</td>
-					<td>xxx</td>
-					<td>xxx</td>
-					<td>xxx</td>
+					<td>${u.bid}</td>
+					<td>${u.book_id}</td>
+					<td>${u.book_name}</td>
+					<td>${u.book_type}</td>
+					<td>${u.book_author}</td>
+					<td>${u.book_pubname}</td>
+					<td>${u.book_time}</td>
+					<td>${u.book_price}</td>
+					<td>${u.book_amount}</td>
+					<td>${u.book_photo}</td>
 					<td class="f-14 td-manage"><a style="text-decoration:none" class="ml-5" onClick="article_edit('添加图书','tbl_book-add.html','10001')" href="javascript:;" title="添加"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>

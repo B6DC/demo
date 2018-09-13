@@ -16,7 +16,6 @@ public class TblRecord {
 	@Id //主键注解
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
 	private Integer tid;
-	@Column()
 	private String book_id;
 	private String book_name;
 	private String book_photo;

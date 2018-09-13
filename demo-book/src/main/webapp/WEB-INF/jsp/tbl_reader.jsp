@@ -1,4 +1,6 @@
-﻿<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -46,19 +48,21 @@
 			</tr>
 		</thead>
 		<tbody>
+		<c:forEach items="${list }" var="u">
 			<tr class="text-c">
 				<td><input type="checkbox" value="1" name=""></td>
-				<td>1</td>
-				<td>张三</td>
-				<td>aa</td>
-				<td>xx</td>
-				<td>1</td>
-				<td>xx</td>
-				<td>1321334456</td>
-				<td>admin@mail.com</td>
-				<td>45</td>
+				<td>${u.reader_id}</td>
+				<td>${u.reader_name}</td>
+				<td>${u.reader_password}</td>
+				<td>${u.reader_xame}</td>
+				<td>${u.reader_sex}</td>
+				<td>${u.reader_photo}</td>
+				<td>${u.reader_photo}</td>
+				<td>${u.reader_email}</td>
+				<td>${u.reader_money}</td>
 				<td class="td-manage"><a title="编辑" href="javascript:;" onclick="member_edit('编辑','tbl_reader-add.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','tbl_reader-password.html','10001','600','270')" href="javascript:;" title="修改密码"><i class="Hui-iconfont">&#xe63f;</i></a> <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
+		</c:forEach>
 		</tbody>
 	</table>
 	</div>

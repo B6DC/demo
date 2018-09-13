@@ -7,23 +7,20 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.yc.dao.TblBookDao;
-
+import com.yc.dao.TblReaderDao;
 
 @Controller
 @EnableAutoConfiguration
-public class TblBookController {
+public class TblReaderController {
 	
 	@Resource
-	TblBookDao dao;
+	TblReaderDao dao;
 	
-	@RequestMapping("/findAllBook.action")
+	@RequestMapping("/findAllReader.action")
 	String findAll(Model m){
 		m.addAttribute("list", dao.findAll());
-		
-		return "tbl_book";
+		return "tbl_reader";
 	}
 	
 	public static void main(String[] args) throws Exception {

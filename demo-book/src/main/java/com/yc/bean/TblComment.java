@@ -16,7 +16,6 @@ public class TblComment {
 	@Id //主键注解
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
 	private Integer cid;
-	@Column()
 	private String book_id;
 	private String book_name;
 	private String book_author;

@@ -44,14 +44,14 @@
 			</tr>
 		</thead>
 		<tbody>
-		<c:forEach items="${list}" var="u">
+		<c:forEach items="${list }" var="u">
 			<tr class="text-c">
-				<td>${u.manage_Id}</td>
-				<td>${u.manage_Name}</td>
-				<td>${u.manage_Password}</td>
-				<td>${u.manage_phone}</td>
-				<td>${u.manage_email}</td>
-				<td>${u.manage_power}</td>
+				<td>${u.manage_id}</td>
+				<td>${u.managename}</td>
+				<td>${u.managepassword}</td>
+				<td>${u.managephone}</td>
+				<td>${u.manageemail}</td>
+				<td>${u.managepower}</td>
 				<td class="td-manage"><a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
 			</c:forEach>

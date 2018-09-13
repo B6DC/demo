@@ -1,4 +1,6 @@
-﻿<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -30,25 +32,27 @@
 				<tr class="text-c">
 					<th width="25"><input type="checkbox" name="" value=""></th>
 					<th width="70">编号</th>
+					<th>图像</th>
 					<th width="80">用户昵称</th>
 					<th width="70">书籍编号</th>
 					<th width="120">书籍名</th>
-					<th>图像</th>
 					<th width="100">退书日期</th>
 					<th width="100">操作</th>
 				</tr>
 			</thead>
 			<tbody>
+			<c:forEach items="${list }" var="u">
 				<tr class="text-c">
 					<td><input name="" type="checkbox" value=""></td>
-					<td>1</td>
-					<td>xxx</td>
-					<td>xxx</td>
-					<td>xxx</td>
-					<td><img src="temp/brand/dongpeng.jpeg"></td>
-					<td>xxx</td>
+					<td>${u.tid}</td>
+					<td>${u.book_photo}</td>
+					<td>${u.book_id}</td>
+					<td>${u.book_name}</td>
+					<td>${u.reader_xame}</td>
+					<td>${u.back_date}</td>
 					<td class="f-14 product-brand-managei class="Hui-iconfont"><a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
+			</c:forEach>
 			</tbody>
 		</table>
 	</div>

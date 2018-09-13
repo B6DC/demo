@@ -17,10 +17,11 @@ public class TblManageController {
 	@Resource
 	TblManageDao dao;
 	
-	@RequestMapping("/findAllManage")
-	String findAllManage(Model m){
+	
+	@RequestMapping("/findAllManage.action")
+	String findAll(Model m){
 		m.addAttribute("list", dao.findAll());
-		return "oihia";
+		return "tbl_manage";
 	}
 	
 	

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -34,10 +36,10 @@
 				<tr class="text-c">
 					<th width="40"><input name="" type="checkbox" value=""></th>
 					<th width="80">编号</th>
+					<th>图像</th>
 					<th width="100">用户昵称</th>
 					<th width="100">书籍编号</th>
 					<th width="150">书籍名</th>
-					<th>图像</th>
 					<th width="150">购买日期</th>
 					<th width="60">购买地址</th>
 					<th width="60">购买数量</th>
@@ -45,18 +47,20 @@
 				</tr>
 			</thead>
 			<tbody>
+			<c:forEach items="${list }" var="u">
 				<tr class="text-c">
 					<td><input name="" type="checkbox" value=""></td>
-					<td>1001</td>
-					<td>xxx</td>
-					<td>xxx</td>
-					<td>书名</td>
-					<td>xxx</td>
-					<td>2014-6-11 11:11:42</td>
-					<td>xxx</td>
-					<td>11</td>
+					<td>${u.oid}</td>
+					<td>${u.book_photo}</td>
+					<td>${u.reader_xame}</td>
+					<td>${u.book_id}</td>
+					<td>${u.book_name}</td>
+					<td>${u.buy_date}</td>
+					<td>${u.buy_addres}</td>
+					<td>${u.book_number}</td>
 					<td class="td-manage"><a style="text-decoration:none" class="ml-5" onClick="picture_edit('订单修改','tbl_orders-add.html','10001')" href="javascript:;" title="修改"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="picture_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
+			</c:forEach>
 			</tbody>
 		</table>
 	</div>
