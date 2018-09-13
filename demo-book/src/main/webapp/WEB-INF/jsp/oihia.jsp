@@ -8,6 +8,7 @@
 </head>
 <body>
 <table>
+1
 <c:forEach items="${list}" var="u">
 			<tr class="text-c">
 				<td>${u.manage_Id}</td>

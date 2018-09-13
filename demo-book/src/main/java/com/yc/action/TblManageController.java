@@ -19,14 +19,10 @@ public class TblManageController {
 	
 	@RequestMapping("/findAllManage")
 	String findAllManage(Model m){
-		m.addAttribute("list",dao.findAll());
+		m.addAttribute("list", dao.findAll());
 		return "oihia";
 	}
 	
-	@RequestMapping("/findAlloihia")
-	String findAlloihia(){
-		return "oihia";
-	}
 	
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(TblManageController.class, args);
