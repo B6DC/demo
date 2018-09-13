@@ -7,16 +7,16 @@
 <title>Iaaa</title>
 </head>
 <body>
-<table>
 1
+<table>
 <c:forEach items="${list}" var="u">
 			<tr class="text-c">
 				<td>${u.manage_Id}</td>
-				<td>${u.manageName}</td>
-				<td>${u.managePassword}</td>
-				<td>${u.managephone}</td>
-				<td>${u.manageemail}</td>
-				<td>${u.managepower}</td>
+				<td>${u.manage_Name}</td>
+				<td>${u.manage_Password}</td>
+				<td>${u.manage_phone}</td>
+				<td>${u.manage_email}</td>
+				<td>${u.manage_power}</td>
 			</tr>
 			</c:forEach>
 </table>

@@ -87,6 +87,12 @@ public class TblBook {
 	public void setBook_photo(String book_photo) {
 		this.book_photo = book_photo;
 	}
+	@Override
+	public String toString() {
+		return "TblBook [bid=" + bid + ", book_id=" + book_id + ", book_name=" + book_name + ", book_type=" + book_type
+				+ ", book_author=" + book_author + ", book_pubname=" + book_pubname + ", book_time=" + book_time
+				+ ", book_price=" + book_price + ", book_amount=" + book_amount + ", book_photo=" + book_photo + "]";
+	}
 	
 	
 	
