@@ -14,6 +14,11 @@ public class TblIndexController {
 		return "tbl_index";
 	}
 	
+	@RequestMapping("/tbl_book_add.action")
+	String tblbookadd(){
+		return "tbl_book_add";
+	}
+	
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(TblBookController.class, args);
 	}

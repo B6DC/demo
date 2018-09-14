@@ -2,6 +2,7 @@ package com.yc.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+
 import com.yc.bean.TblBook;
 
 /**
@@ -11,6 +12,8 @@ import com.yc.bean.TblBook;
  *
  */
 	public interface TblBookDao extends JpaRepository<TblBook, Integer> {
-
+		
+		
+		
 	}
 
