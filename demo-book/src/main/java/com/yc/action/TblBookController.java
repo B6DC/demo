@@ -59,7 +59,7 @@ public class TblBookController {
 	
 	
 	//添加图书
-	@RequestMapping("/addregister.action")
+	@RequestMapping("/addBook.action")
     String register(HttpServletRequest request) throws ParseException{
         //界面取值
 	    String book_id = request.getParameter("book_id");
@@ -91,8 +91,7 @@ public class TblBookController {
             tbook.setBook_photo(book_name);
             //SQL增加
             dao.save(tbook);
-           
-            return "index";
+            return "redirect:/findAllBook.action";
             
     }
 

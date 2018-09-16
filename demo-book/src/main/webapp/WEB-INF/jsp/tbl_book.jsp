@@ -26,11 +26,6 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 书籍管理 <span class="c-gray en">&gt;</span> 书籍列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-	<div class="text-c">
-	 
-		<input type="text" name="" id="" placeholder=" 书名" style="width:250px" class="input-text">
-		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
-	</div>
 	<div class="mt-20">
 	
 		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
@@ -66,7 +61,8 @@
 					<td>${u.book_photo}</td>
 					<td class="f-14 td-manage">
 					<a style="text-decoration:none" class="ml-5" onClick="article_edit('添加图书','tbl_book_add.action')" href="javascript:;" title="添加"><i class="Hui-iconfont">&#xe6df;</i></a> 
-					<a href="javascript:deletebook();" style="text-decoration:none" class="ml-5" onClick="article_del(${u.bid})"  title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
+				
+				<%-- 删除图书不要有外键引用 不能删除	<a href="javascript:deletebook();" style="text-decoration:none" class="ml-5" onClick="article_del(${u.bid})"  title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a> --%>
 					</td>
 				</tr>
 				</c:forEach>
@@ -96,8 +92,8 @@ $('.table-sort').dataTable({
 	]
 });
 
-/*添加*/
-function article_add(title,url,w,h){
+/*资讯-编辑*/
+function article_edit(title,url,id,w,h){
 	var index = layer.open({
 		type: 2,
 		title: title,

@@ -30,25 +30,27 @@
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
         <div class="formControls col-xs-8">
-          <input id="" name="" type="text" placeholder="账户" class="input-text size-L">
+          <input id="" name="uname" type="text" placeholder="账号" class="input-text size-L">
         </div>
       </div>
       <div class="row cl">
         <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
         <div class="formControls col-xs-8">
-          <input id="" name="" type="password" placeholder="密码" class="input-text size-L">
+          <input id="" name="upass" type="password" placeholder="密码" class="input-text size-L">
         </div>
       </div>
-      <div class="row cl">
+       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
           <label for="online">
             <input type="checkbox" name="online" id="online" value="">
-            使我保持登录状态</label>
+            保持登录状态</label>
         </div>
       </div>
+      
       <div class="row cl">
         <div class="formControls col-xs-8 col-xs-offset-3">
-          <input name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+          <input id="sub" name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           <input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
         </div>
       </div>
@@ -58,5 +60,39 @@
 <div class="footer">网上书城</div>
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript">
+//验证
+$(function(){
+	 $("#sub").click(function(){
+		 var pwd=$("input[name='upass']").val();
+		 var name=$("input[name='uname']").val();
+		//账号
+		 if(name == ""){
+			 alert("账号不能为空！");
+			 $("input[name='uname']").val("");
+		 		return false;
+		 }else if(name == "admin"){
+			 $("input[name='uname']").val("");
+		 		return true;
+		 }else{
+			 alert("账号或密码错误！");
+			 return false;
+		 }
+		 if(pwd == ""){
+			 alert("密码不能为空！");
+			 $("input[name='uname']").val("");
+		 		return false;
+		 }else if(pwd == "admin"){
+			 $("input[name='uname']").val("");
+		 		return true;
+		 }else{
+			 alert("账号或密码错误！");
+			 return false;
+		 }		
+	 });
+});  
+
+
+</script>
 </body>
 </html>
