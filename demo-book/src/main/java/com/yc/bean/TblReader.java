@@ -13,70 +13,71 @@ public class TblReader {
 	
 	@Id //主键注解
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
-	private Integer reader_id;
-	private String reader_name;
-	private String reader_password;
-	private String reader_xame;
-	private String reader_sex;
-	private String reader_photo;
-	private String reader_phone;
-	private String reader_email;
-	private String reader_money;
+	private Integer readerId;
+	private String readerName;
+	private String readerPassword;
+	private String readerXame;
+	private String readerSex;
+	private String readerPhoto;
+	private String readerPhone;
+	private String readerEmail;
+	private String readerMoney;
+	public Integer getReaderId() {
+		return readerId;
+	}
+	public void setReaderId(Integer readerId) {
+		this.readerId = readerId;
+	}
+	public String getReaderName() {
+		return readerName;
+	}
+	public void setReaderName(String readerName) {
+		this.readerName = readerName;
+	}
+	public String getReaderPassword() {
+		return readerPassword;
+	}
+	public void setReaderPassword(String readerPassword) {
+		this.readerPassword = readerPassword;
+	}
+	public String getReaderXame() {
+		return readerXame;
+	}
+	public void setReaderXame(String readerXame) {
+		this.readerXame = readerXame;
+	}
+	public String getReaderSex() {
+		return readerSex;
+	}
+	public void setReaderSex(String readerSex) {
+		this.readerSex = readerSex;
+	}
+	public String getReaderPhoto() {
+		return readerPhoto;
+	}
+	public void setReaderPhoto(String readerPhoto) {
+		this.readerPhoto = readerPhoto;
+	}
+	public String getReaderPhone() {
+		return readerPhone;
+	}
+	public void setReaderPhone(String readerPhone) {
+		this.readerPhone = readerPhone;
+	}
+	public String getReaderEmail() {
+		return readerEmail;
+	}
+	public void setReaderEmail(String readerEmail) {
+		this.readerEmail = readerEmail;
+	}
+	public String getReaderMoney() {
+		return readerMoney;
+	}
+	public void setReaderMoney(String readerMoney) {
+		this.readerMoney = readerMoney;
+	}
 	
-	public Integer getReader_id() {
-		return reader_id;
-	}
-	public void setReader_id(Integer reader_id) {
-		this.reader_id = reader_id;
-	}
-	public String getReader_name() {
-		return reader_name;
-	}
-	public void setReader_name(String reader_name) {
-		this.reader_name = reader_name;
-	}
-	public String getReader_password() {
-		return reader_password;
-	}
-	public void setReader_password(String reader_password) {
-		this.reader_password = reader_password;
-	}
-	public String getReader_xame() {
-		return reader_xame;
-	}
-	public void setReader_xame(String reader_xame) {
-		this.reader_xame = reader_xame;
-	}
-	public String getReader_sex() {
-		return reader_sex;
-	}
-	public void setReader_sex(String reader_sex) {
-		this.reader_sex = reader_sex;
-	}
-	public String getReader_photo() {
-		return reader_photo;
-	}
-	public void setReader_photo(String reader_photo) {
-		this.reader_photo = reader_photo;
-	}
-	public String getReader_phone() {
-		return reader_phone;
-	}
-	public void setReader_phone(String reader_phone) {
-		this.reader_phone = reader_phone;
-	}
-	public String getReader_email() {
-		return reader_email;
-	}
-	public void setReader_email(String reader_email) {
-		this.reader_email = reader_email;
-	}
-	public String getReader_money() {
-		return reader_money;
-	}
-	public void setReader_money(String reader_money) {
-		this.reader_money = reader_money;
-	}
 	
+
 
 }

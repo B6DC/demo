@@ -8,61 +8,65 @@ public class TblManage {
 	
 	@Id //主键注解
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
-	private Integer manage_id;
-	@Column(name="manage_name")
-	private String managename;
-	@Column(name="manage_password")
-	private String managepassword;
-	@Column(name="manage_phone")
-	private String managephone;
-	@Column(name="manage_email")
-	private String manageemail;
-	@Column(name="manage_power")
-	private String managepower;
+	private Integer manageId;
+
+	private String manageName;
+
+	private String managePassword;
+
+	private String managePhone;
 	
-	public Integer getManage_id() {
-		return manage_id;
-	}
-	public void setManage_id(Integer manage_id) {
-		this.manage_id = manage_id;
-	}
-	public String getManagename() {
-		return managename;
-	}
-	public void setManagename(String managename) {
-		this.managename = managename;
-	}
-	public String getManagepassword() {
-		return managepassword;
-	}
-	public void setManagepassword(String managepassword) {
-		this.managepassword = managepassword;
-	}
-	public String getManagephone() {
-		return managephone;
-	}
-	public void setManagephone(String managephone) {
-		this.managephone = managephone;
-	}
-	public String getManageemail() {
-		return manageemail;
-	}
-	public void setManageemail(String manageemail) {
-		this.manageemail = manageemail;
-	}
-	public String getManagepower() {
-		return managepower;
-	}
-	public void setManagepower(String managepower) {
-		this.managepower = managepower;
-	}
+	private String manageEmail;
 	
-	
-	
-	
-	
-	
-	
+	private String managePower;
+
+	public Integer getManageId() {
+		return manageId;
+	}
+
+	public void setManageId(Integer manageId) {
+		this.manageId = manageId;
+	}
+
+	public String getManageName() {
+		return manageName;
+	}
+
+	public void setManageName(String manageName) {
+		this.manageName = manageName;
+	}
+
+	public String getManagePassword() {
+		return managePassword;
+	}
+
+	public void setManagePassword(String managePassword) {
+		this.managePassword = managePassword;
+	}
+
+	public String getManagePhone() {
+		return managePhone;
+	}
+
+	public void setManagePhone(String managePhone) {
+		this.managePhone = managePhone;
+	}
+
+	public String getManageEmail() {
+		return manageEmail;
+	}
+
+	public void setManageEmail(String manageEmail) {
+		this.manageEmail = manageEmail;
+	}
+
+	public String getManagePower() {
+		return managePower;
+	}
+
+	public void setManagePower(String managePower) {
+		this.managePower = managePower;
+	}
 	
 	
 }

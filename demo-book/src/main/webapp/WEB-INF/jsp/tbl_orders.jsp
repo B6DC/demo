@@ -30,7 +30,6 @@
 		<table class="table table-border table-bordered table-bg table-hover table-sort">
 			<thead>
 				<tr class="text-c">
-					
 					<th width="80">编号</th>
 					<th>书籍封面</th>
 					<th width="100">用户昵称</th>
@@ -45,15 +44,14 @@
 			<tbody>
 			<c:forEach items="${list }" var="u">
 				<tr class="text-c">
-					
 					<td>${u.oid}</td>
-					<td>${u.book_photo}</td>
-					<td>${u.reader_xame}</td>
-					<td>${u.book_id}</td>
-					<td>${u.book_name}</td>
-					<td>${u.buy_date}</td>
-					<td>${u.buy_addres}</td>
-					<td>${u.book_number}</td>
+					<td>${u.bookPhoto}</td>
+					<td>${u.readerXame}</td>
+					<td>${u.bookId}</td>
+					<td>${u.bookName}</td>
+					<td>${u.buyDate}</td>
+					<td>${u.buyAddres}</td>
+					<td>${u.bookNumber}</td>
 					<td class="td-manage">
 					<a style="text-decoration:none" class="ml-5" onClick="picture_edit('订单修改','tbl_orders-add.html','10001')" href="javascript:;" title="修改"><i class="Hui-iconfont">&#xe6df;</i></a> 
 					<a style="text-decoration:none" class="ml-5" onClick="picture_del(${u.oid})" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>

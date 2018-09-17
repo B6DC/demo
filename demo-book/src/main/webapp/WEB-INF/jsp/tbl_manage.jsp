@@ -45,12 +45,12 @@
 		<tbody>
 		<c:forEach items="${list }" var="u">
 			<tr class="text-c">
-				<td>${u.manage_id}</td>
-				<td>${u.managename}</td>
-				<td>${u.managepassword}</td>
-				<td>${u.managephone}</td>
-				<td>${u.manageemail}</td>
-				<td>${u.managepower}</td>
+				<td>${u.manageId}</td>
+				<td>${u.manageName}</td>
+				<td>${u.managePassword}</td>
+				<td>${u.managePhone}</td>
+				<td>${u.manageEmail}</td>
+				<td>${u.managePower}</td>
 			</tr>
 			</c:forEach>
 		</tbody>

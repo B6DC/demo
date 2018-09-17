@@ -18,15 +18,15 @@ public class TblBook {
 	@Id //主键注解
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
 	private Integer bid;
-	private String book_id;
-	private String book_name;
-	private String book_type;
-	private String book_author;
-	private String book_pubname;
-	private Date book_time;
-	private String book_price;
-	private Integer book_amount;
-	private String book_photo;
+	private String bookId;
+	private String bookName;
+	private String bookType;
+	private String bookAuthor;
+	private String bookPubname;
+	private Date bookTime;
+	private String bookPrice;
+	private Integer bookAmount;
+	private String bookPhoto;
 	
 	public Integer getBid() {
 		return bid;
@@ -34,65 +34,59 @@ public class TblBook {
 	public void setBid(Integer bid) {
 		this.bid = bid;
 	}
-	public String getBook_id() {
-		return book_id;
+	public String getBookId() {
+		return bookId;
 	}
-	public void setBook_id(String book_id) {
-		this.book_id = book_id;
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
 	}
-	public String getBook_name() {
-		return book_name;
+	public String getBookName() {
+		return bookName;
 	}
-	public void setBook_name(String book_name) {
-		this.book_name = book_name;
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
 	}
-	public String getBook_type() {
-		return book_type;
+	public String getBookType() {
+		return bookType;
 	}
-	public void setBook_type(String book_type) {
-		this.book_type = book_type;
+	public void setBookType(String bookType) {
+		this.bookType = bookType;
 	}
-	public String getBook_author() {
-		return book_author;
+	public String getBookAuthor() {
+		return bookAuthor;
 	}
-	public void setBook_author(String book_author) {
-		this.book_author = book_author;
+	public void setBookAuthor(String bookAuthor) {
+		this.bookAuthor = bookAuthor;
 	}
-	public String getBook_pubname() {
-		return book_pubname;
+	public String getBookPubname() {
+		return bookPubname;
 	}
-	public void setBook_pubname(String book_pubname) {
-		this.book_pubname = book_pubname;
+	public void setBookPubname(String bookPubname) {
+		this.bookPubname = bookPubname;
 	}
-	public Date getBook_time() {
-		return book_time;
+	public Date getBookTime() {
+		return bookTime;
 	}
-	public void setBook_time(Date book_time) {
-		this.book_time = book_time;
+	public void setBookTime(Date bookTime) {
+		this.bookTime = bookTime;
 	}
-	public String getBook_price() {
-		return book_price;
+	public String getBookPrice() {
+		return bookPrice;
 	}
-	public void setBook_price(String book_price) {
-		this.book_price = book_price;
+	public void setBookPrice(String bookPrice) {
+		this.bookPrice = bookPrice;
 	}
-	public Integer getBook_amount() {
-		return book_amount;
+	public Integer getBookAmount() {
+		return bookAmount;
 	}
-	public void setBook_amount(Integer book_amount) {
-		this.book_amount = book_amount;
+	public void setBookAmount(Integer bookAmount) {
+		this.bookAmount = bookAmount;
 	}
-	public String getBook_photo() {
-		return book_photo;
+	public String getBookPhoto() {
+		return bookPhoto;
 	}
-	public void setBook_photo(String book_photo) {
-		this.book_photo = book_photo;
-	}
-	@Override
-	public String toString() {
-		return "TblBook [bid=" + bid + ", book_id=" + book_id + ", book_name=" + book_name + ", book_type=" + book_type
-				+ ", book_author=" + book_author + ", book_pubname=" + book_pubname + ", book_time=" + book_time
-				+ ", book_price=" + book_price + ", book_amount=" + book_amount + ", book_photo=" + book_photo + "]";
+	public void setBookPhoto(String bookPhoto) {
+		this.bookPhoto = bookPhoto;
 	}
 	
 	

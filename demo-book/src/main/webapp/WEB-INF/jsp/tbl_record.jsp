@@ -45,11 +45,11 @@
 				<tr class="text-c">
 					
 					<td>${u.tid}</td>
-					<td>${u.book_photo}</td>
-					<td>${u.reader_xame}</td>
-					<td>${u.book_id}</td>
-					<td>${u.book_name}</td>
-					<td>${u.back_date}</td>
+					<td>${u.bookPhoto}</td>
+					<td>${u.readerXame}</td>
+					<td>${u.bookId}</td>
+					<td>${u.bookName}</td>
+					<td>${u.backDate}</td>
 					<td class="f-14 product-brand-managei" class="Hui-iconfont"><a style="text-decoration:none" class="ml-5" onClick="article_del(${u.tid})" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 			</c:forEach>

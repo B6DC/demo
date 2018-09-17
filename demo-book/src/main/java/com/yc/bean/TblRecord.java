@@ -16,48 +16,49 @@ public class TblRecord {
 	@Id //主键注解
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
 	private Integer tid;
-	private String book_id;
-	private String book_name;
-	private String book_photo;
-	private String reader_xame;
-	private Date back_date;
-	
+	private String bookId;
+	private String bookName;
+	private String bookPhoto;
+	private String readerXame;
+	private Date backDate;
 	public Integer getTid() {
 		return tid;
 	}
 	public void setTid(Integer tid) {
 		this.tid = tid;
 	}
-	public String getBook_id() {
-		return book_id;
+	public String getBookId() {
+		return bookId;
 	}
-	public void setBook_id(String book_id) {
-		this.book_id = book_id;
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
 	}
-	public String getBook_name() {
-		return book_name;
+	public String getBookName() {
+		return bookName;
 	}
-	public void setBook_name(String book_name) {
-		this.book_name = book_name;
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
 	}
-	public String getBook_photo() {
-		return book_photo;
+	public String getBookPhoto() {
+		return bookPhoto;
 	}
-	public void setBook_photo(String book_photo) {
-		this.book_photo = book_photo;
+	public void setBookPhoto(String bookPhoto) {
+		this.bookPhoto = bookPhoto;
 	}
-	public String getReader_xame() {
-		return reader_xame;
+	public String getReaderXame() {
+		return readerXame;
 	}
-	public void setReader_xame(String reader_xame) {
-		this.reader_xame = reader_xame;
+	public void setReaderXame(String readerXame) {
+		this.readerXame = readerXame;
 	}
-	public Date getBack_date() {
-		return back_date;
+	public Date getBackDate() {
+		return backDate;
 	}
-	public void setBack_date(Date back_date) {
-		this.back_date = back_date;
+	public void setBackDate(Date backDate) {
+		this.backDate = backDate;
 	}
+	
+	
 	
 	
 }

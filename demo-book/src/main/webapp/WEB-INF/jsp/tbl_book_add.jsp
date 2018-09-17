@@ -103,7 +103,7 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"></label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<div class="uploader-thum-container">
+				<div class="uploader-thum-container" style="text-align:center">
 					<button id="btn-star" class="btn btn-default btn-uploadstar radius ml-10">开始上传</button>
 				</div>
 			</div>

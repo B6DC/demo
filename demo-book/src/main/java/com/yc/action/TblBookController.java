@@ -80,20 +80,19 @@ public class TblBookController {
         //实例化
             TblBook tbook = new TblBook();
             tbook.setBid(bid);
-            tbook.setBook_id(book_id);
-            tbook.setBook_name(book_name);
-            tbook.setBook_type(book_type);
-            tbook.setBook_author(book_author);
-            tbook.setBook_pubname(book_pubname);
-            tbook.setBook_time(book_time);
-            tbook.setBook_price(book_price);
-            tbook.setBook_amount(book_amount);
-            tbook.setBook_photo(book_name);
+            tbook.setBookId(book_id);
+            tbook.setBookName(book_name);
+            tbook.setBookType(book_type);
+            tbook.setBookAuthor(book_author);
+            tbook.setBookPubname(book_pubname);
+            tbook.setBookTime(book_time);
+            tbook.setBookPrice(book_price);
+            tbook.setBookAmount(book_amount);
+            tbook.setBookPhoto(book_name);
             //SQL增加
             dao.save(tbook);
-            return "redirect:/findAllBook.action";
-            
-    }
+            return "redirect:/findAllBook.action"; 
+	}
 
 	
 	

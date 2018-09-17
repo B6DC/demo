@@ -26,8 +26,13 @@
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 书籍管理 <span class="c-gray en">&gt;</span> 书籍列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
-	<div class="mt-20">
+	<div class="text-c"> 
+		<a style="text-decoration:none" class="ml-5" onClick="article_edit('添加图书','tbl_book_add.action')" href="javascript:;" title="添加"><i class="Hui-iconfont"><button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe6df;</i>添加图书</button></i></a> 
 	
+		
+	</div>
+
+	<div class="mt-20">
 		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
 			<thead>
 				<tr class="text-c">
@@ -42,27 +47,24 @@
 					<th width="75">价格</th>
 					<th width="60">库存</th>
 					<th width="160">书籍封面</th>
-					<th width="80">操作</th>
 				</tr>
 			</thead>
 			<tbody>
 			<c:forEach items="${list }" var="u">
 				<tr class="text-c">
 					<td>${u.bid}</td>
-					<td>${u.book_id}</td>
-					<td>${u.book_name}</td>
-					<td>${u.book_type}</td>
-					<td>${u.book_author}</td>
-					<td>${u.book_pubname}</td>
-					<td>${u.book_time}</td>
-					<td>${u.book_price}</td>
-					<td>${u.book_amount}</td>                                                                                                                                                                                                       
-					<td>${u.book_photo}</td>
-					<td class="f-14 td-manage">
-					<a style="text-decoration:none" class="ml-5" onClick="article_edit('添加图书','tbl_book_add.action')" href="javascript:;" title="添加"><i class="Hui-iconfont">&#xe6df;</i></a> 
+					<td>${u.bookId}</td>
+					<td>${u.bookName}</td>
+					<td>${u.bookType}</td>
+					<td>${u.bookAuthor}</td>
+					<td>${u.bookPubname}</td>
+					<td>${u.bookTime}</td>
+					<td>${u.bookPrice}</td>
+					<td>${u.bookAmount}</td>                                                                                                                                                                                                       
+					<td>${u.bookPhoto}</td>
 				
 				<%-- 删除图书不要有外键引用 不能删除	<a href="javascript:deletebook();" style="text-decoration:none" class="ml-5" onClick="article_del(${u.bid})"  title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a> --%>
-					</td>
+					
 				</tr>
 				</c:forEach>
 			</tbody>
