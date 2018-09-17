@@ -40,7 +40,6 @@
 				<th width="150">管理员电话</th>
 				<th width="200">管理员邮箱</th>
 				<th>角色</th>
-				<th width="100">操作</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -52,7 +51,6 @@
 				<td>${u.managephone}</td>
 				<td>${u.manageemail}</td>
 				<td>${u.managepower}</td>
-				<td class="td-manage"><a title="删除" href="javascript:;" onclick="admin_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
 			</c:forEach>
 		</tbody>
@@ -77,23 +75,6 @@
 	w		弹出层宽度（缺省调默认值）
 	h		弹出层高度（缺省调默认值）
 */
-/*管理员-删除*/
-function admin_del(obj,id){
-	layer.confirm('确认要删除吗？',function(index){
-		$.ajax({
-			type: 'POST',
-			url: '',
-			dataType: 'json',
-			success: function(data){
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!',{icon:1,time:1000});
-			},
-			error:function(data) {
-				console.log(data.msg);
-			},
-		});		
-	});
-}
 </script>
 </body>
 </html>

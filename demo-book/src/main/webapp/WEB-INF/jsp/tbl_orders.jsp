@@ -32,14 +32,14 @@
 				<tr class="text-c">
 					
 					<th width="80">编号</th>
-					<th>图像</th>
+					<th>书籍封面</th>
 					<th width="100">用户昵称</th>
 					<th width="100">书籍编号</th>
-					<th width="150">书籍名</th>
-					<th width="150">购买日期</th>
-					<th width="60">购买地址</th>
+					<th width="100">书籍名</th>
+					<th width="140">购买日期</th>
+					<th width="160">购买地址</th>
 					<th width="60">购买数量</th>
-					<th width="100">操作</th>
+					<th width="80">操作</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -83,16 +83,6 @@ $('.table-sort').dataTable({
 	  {"orderable":false,"aTargets":[0,8]}// 制定列不参与排序
 	]
 });
-
-/*图片-添加*/
-function picture_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
 
 /*图片-编辑*/
 function picture_edit(title,url,id){

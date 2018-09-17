@@ -35,7 +35,7 @@ public class TblOrdersController {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(TblBookController.class, args);
+		SpringApplication.run(TblOrdersController.class, args);
 	}
 	
 }

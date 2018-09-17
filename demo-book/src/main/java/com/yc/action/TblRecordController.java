@@ -1,6 +1,11 @@
 package com.yc.action;
 
+import java.io.IOException;
+import java.io.Writer;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -25,8 +30,14 @@ public class TblRecordController {
 		return "tbl_record";
 	}
 	
+	@RequestMapping("/deleteRecord.action")
+	String deleterecord(Integer tid,Writer out,HttpServletResponse response,HttpServletRequest request) throws IOException{
+			dao.delete(tid);
+		return "redirect:/findAllRecord.action";
+	}
+	
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(TblBookController.class, args);
+		SpringApplication.run(TblRecordController.class, args);
 	}
 
 }

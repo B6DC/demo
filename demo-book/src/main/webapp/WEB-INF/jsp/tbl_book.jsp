@@ -31,7 +31,7 @@
 		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
 			<thead>
 				<tr class="text-c">
-					<th width="25"><input type="checkbox" name="" value=""></th>
+					
 					<th width="80">编号</th>
 					<th width="80">书号</th>
 					<th width="80">书名</th>
@@ -41,14 +41,13 @@
 					<th width="120">出版时间</th>
 					<th width="75">价格</th>
 					<th width="60">库存</th>
-					<th width="100">图像</th>
-					<th width="120">操作</th>
+					<th width="160">书籍封面</th>
+					<th width="80">操作</th>
 				</tr>
 			</thead>
 			<tbody>
 			<c:forEach items="${list }" var="u">
 				<tr class="text-c">
-					<td><input type="checkbox" value="" name=""></td>
 					<td>${u.bid}</td>
 					<td>${u.book_id}</td>
 					<td>${u.book_name}</td>

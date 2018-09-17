@@ -34,6 +34,6 @@ public class TblIndexController {
 		}
 		
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(TblBookController.class, args);
+		SpringApplication.run(TblIndexController.class, args);
 	}
 }

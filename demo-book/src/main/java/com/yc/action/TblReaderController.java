@@ -24,6 +24,6 @@ public class TblReaderController {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		SpringApplication.run(TblBookController.class, args);
+		SpringApplication.run(TblReaderController.class, args);
 	}
 }

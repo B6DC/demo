@@ -30,7 +30,7 @@
 		<table class="table table-border table-bordered table-bg table-sort">
 			<thead>
 				<tr class="text-c">
-					<th width="25"><input type="checkbox" name="" value=""></th>
+					
 					<th width="70">编号</th>
 					<th>图像</th>
 					<th width="80">用户昵称</th>
@@ -43,14 +43,14 @@
 			<tbody>
 			<c:forEach items="${list }" var="u">
 				<tr class="text-c">
-					<td><input name="" type="checkbox" value=""></td>
+					
 					<td>${u.tid}</td>
 					<td>${u.book_photo}</td>
+					<td>${u.reader_xame}</td>
 					<td>${u.book_id}</td>
 					<td>${u.book_name}</td>
-					<td>${u.reader_xame}</td>
 					<td>${u.back_date}</td>
-					<td class="f-14 product-brand-managei class="Hui-iconfont"><a style="text-decoration:none" class="ml-5" onClick="article_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+					<td class="f-14 product-brand-managei" class="Hui-iconfont"><a style="text-decoration:none" class="ml-5" onClick="article_del(${u.tid})" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 			</c:forEach>
 			</tbody>
@@ -76,20 +76,22 @@ $('.table-sort').dataTable({
 	  {"orderable":false,"aTargets":[0,6]}// 制定列不参与排序
 	]
 });
-function article_del(obj,id){
+function article_del(id){
+	var tid=id;
+	$.post("deleteRecord.action",{tid:tid},function(data){
 	layer.confirm('确认要删除吗？',function(index){
 		$.ajax({
 			type: 'POST',
-			url: '',
+			url: 'findAllRecord.action',
 			dataType: 'json',
 			success: function(data){
-				$(obj).parents("tr").remove();
 				layer.msg('已删除!',{icon:1,time:1000});
 			},
 			error:function(data) {
-				console.log(data.msg);
+				layer.msg('已删除!',{icon:1,time:1000});
 			},
-		});		
+		});	
+	});
 	});
 }
 </script>
