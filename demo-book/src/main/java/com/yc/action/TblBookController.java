@@ -34,29 +34,20 @@ public class TblBookController {
 	TblBookDao dao;
 	
 	
-	
+	//查询所有图书(管理员)
 	@RequestMapping("/findAllBook.action")
 	String findAllbook(Model m){
 		m.addAttribute("list", dao.findAll());	
 		return "tbl_book";
 	}
 	
+	
+	//删除所有
 	@RequestMapping("/deleteBook.action")
 	String deletebook(Integer bid,Writer out,HttpServletResponse response,HttpServletRequest request) throws IOException{
 			dao.delete(bid);
 		return "redirect:/findAllBook.action";
 	}
-	
-	
-	/*@PostMapping("/findAllBook.action/{bid}")
-	@Transactional
-	String deletebook(@PathVariable("bid") Integer bid){
-		dao.delete(bid);
-		System.out.println("aa");
-	    return "redirect:/findAllBook.action";
-	}*/
-
-	
 	
 	//添加图书
 	@RequestMapping("/addBook.action")
@@ -67,7 +58,6 @@ public class TblBookController {
         String book_type = request.getParameter("book_type");
         String book_author = request.getParameter("book_author");
         String book_pubname = request.getParameter("book_pubname");
-        
         //数据类型转换
         java.text.SimpleDateFormat formatter = new SimpleDateFormat( "yyyy-MM-dd");
         String book_time2 = request.getParameter("book_time");
