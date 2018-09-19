@@ -20,7 +20,7 @@ public class TblIndexController {
 	@Resource
 	TblBookDao dao;
 
-	//书城主页面(特价书籍)
+	//书城主页面(用户没登陆特价书籍)
 	@RequestMapping("/index")
 	String index(Model m){
 		m.addAttribute("list", dao.findAll());
@@ -29,6 +29,18 @@ public class TblIndexController {
 		m.addAttribute("book", book);
 		m.addAttribute("book1", book1);
 		return "index";
+	}
+
+
+	//书城主页面(用户已登录特价书籍)
+	@RequestMapping("/index_a")
+	String index_a(Model m){
+		m.addAttribute("list", dao.findAll());
+		List<TblBook> book = dao.findBybookType("手机");
+		List<TblBook> book1 = dao.findBybookType("文学");
+		m.addAttribute("book", book);
+		m.addAttribute("book1", book1);
+		return "index_a";
 	}
 
 	//购物车

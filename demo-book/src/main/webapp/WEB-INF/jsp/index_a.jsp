@@ -68,6 +68,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				} );
 			} );
 		</script>
+		<style type="text/css">
+			.dy1 img[src = ""]{
+			opacity:0;}
+		</style>
 </head>
 <body>
 	<div class="header">
@@ -76,11 +80,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="index.html"><span>Book Store</span></a>
 			</div>
 			<div class="header-right">
-				<a class="account" href="gouwuche.action">购物车</a>
+				<a class="account" href="login.html">退出</a>
 			</div>
 			<div class="header-right">
-				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="login.html">登陆</a>
+				<a class="account" href="gouwuche.action">购物车</a>
 			</div>
+			<div class="header-right" class="dy1"  >
+				<a class="account" href="myinfo.action"><div style="height:60px;width:60px;border:0;border-radius:50%;"><img src="" ></div></a>
+			</div>
+			
 		</div>
 	</div>
 	<div class="main-banner banner text-center">

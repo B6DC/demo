@@ -102,10 +102,7 @@ var elem=$('#container ul');
 				<a href="index"><span>Book</span>Store</a>
 			</div>
 			<div class="header-right">
-				<a class="account" href="login.html">购物车</a>
-			</div>
-			<div class="header-right">
-				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="login.html">登录</a>
+				<a class="account" href="gouwuche.action">购物车</a>
 			</div>
 		</div>
 	</div>
