@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -25,14 +26,23 @@
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 书籍管理 <span class="c-gray en">&gt;</span> 书籍列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<form method="post">
 <div class="page-container">
 	<div class="text-c"> 
-		<a style="text-decoration:none" class="ml-5" onClick="article_edit('添加图书','tbl_book_add.action')" href="javascript:;" title="添加"><i class="Hui-iconfont"><button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe6df;</i>添加图书</button></i></a> 
-	
-		
+		<a href="tbl_book_add.action"><i class="Hui-iconfont">&#xe665;添加图书</i></a>
 	</div>
-
 	<div class="mt-20">
+		<input type="hidden" name="bid">
+		<input type="hidden" name="bookid">
+		<input type="hidden" name="bookname">
+		<input type="hidden" name="booktype">
+		<input type="hidden" name="bookauthor">
+		<input type="hidden" name="bookpubname">
+		<input type="hidden" name="booktime">
+		<input type="hidden" name="bookprice">
+		<input type="hidden" name="bookamount">
+		<input type="hidden" name="bookphoto">
+	
 		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
 			<thead>
 				<tr class="text-c">
@@ -47,6 +57,7 @@
 					<th width="75">价格</th>
 					<th width="60">库存</th>
 					<th width="160">书籍封面</th>
+					<th width="60">操作</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -58,19 +69,21 @@
 					<td>${u.bookType}</td>
 					<td>${u.bookAuthor}</td>
 					<td>${u.bookPubname}</td>
-					<td>${u.bookTime}</td>
+					<td><fmt:formatDate value="${u.bookTime}" pattern="yyyy-MM-dd"/></td>
 					<td>${u.bookPrice}</td>
 					<td>${u.bookAmount}</td>                                                                                                                                                                                                       
 					<td>${u.bookPhoto}</td>
+					<td><a style="text-decoration:none" class="ml-5" href="javascript:void(0)" onClick="undate('${u.bid}','${u.bookId}','${u.bookName}','${u.bookType}','${u.bookAuthor}','${u.bookPubname}',
+	        	      '<fmt:formatDate value="${u.bookTime}" pattern="yyyy-MM-dd"/>','${u.bookPrice}',
+	        	      '${u.bookAmount}','${u.bookPhoto}');"><i class="Hui-iconfont">&#xe6df;</i></a></td>
 				
-				<%-- 删除图书不要有外键引用 不能删除	<a href="javascript:deletebook();" style="text-decoration:none" class="ml-5" onClick="article_del(${u.bid})"  title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a> --%>
-					
 				</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
 </div>
+</form>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
@@ -94,39 +107,24 @@ $('.table-sort').dataTable({
 });
 
 /*资讯-编辑*/
-function article_edit(title,url,id,w,h){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*删除*/
-/* function article_del(){
-	layer.confirm('确认要删除吗？',function(index){
-		$.ajax({
-			type: 'POST',
-			url: 'findAllBook.action/deletebook',
-			 data: "{'bid':'bid'}",
-			dataType: 'json',
-			success: function(data){
-				$(obj).parents("tr").remove();
-				layer.msg('已删除!',{icon:1,time:1000});
-			},
-			error:function(data) {
-				console.log(data.msg);
-				layer.msg('删除失败!',{icon:0,time:1000});
-			},
-		});		
-	});
-} */
 
-function article_del(id){
-var bid=id;
-$.post("deleteBook.do",{bid:bid},function(data){
+function undate(bid,bookId,bookName,bookType,bookAuthor,bookPubname,bookTime,bookPrice,bookAmount,bookPhoto){
 	
-});
+	document.forms[0].elements[0].value = bid;
+	document.forms[0].elements[1].value = bookId;
+	document.forms[0].elements[2].value = bookName;
+	document.forms[0].elements[3].value = bookType;
+	document.forms[0].elements[4].value = bookAuthor;
+	document.forms[0].elements[5].value = bookPubname;
+	document.forms[0].elements[6].value = bookTime;
+	document.forms[0].elements[7].value = bookPrice;
+	document.forms[0].elements[8].value = bookAmount;
+	document.forms[0].elements[9].value = bookPhoto;
+	
+	document.forms[0].action = '<c:url value="update.action"/>';
+	
+	document.forms[0].submit();
+	
 }
 </script> 
 </body>

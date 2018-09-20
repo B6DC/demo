@@ -1,9 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+       
+    <%@ page import="java.net.URLDecoder" %>
+    <%
+	
+	 Cookie[] cookies = request.getCookies();
+     String username = "";
+     String cname ="";
+     if(cookies != null){
+     for(Cookie c:cookies){
+    	 if(c.getName().equals("name")){
+    		 username=c.getValue();	 
+    		 cname = URLDecoder.decode(username,"utf-8");
+    	 }   
+     	}
+     }
+     String userpwd ="";
+     String cpwd ="";
+     if(cookies != null){
+         for(Cookie c:cookies){
+        	 if(c.getName().equals("pwd")){
+        		 userpwd=c.getValue();	
+        		 cpwd = URLDecoder.decode(userpwd,"utf-8");
+        	 }
+         	}
+         }
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Categories</title>
+<title>Login</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-select.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -43,6 +69,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       maxOptions: 1
     });
   });
+  
+  
+  $(function(){
+ 	 $("#sub").click(function(){
+ 		 var pwd=$("input[name='pwd']").val();
+ 		 var name=$("input[name='name']").val();
+ 		 //密码   阻止表单提交
+ 		 if(pwd == ""){
+ 			 alert("密码不能为空！");
+ 			 $("input[name='pwd']").val("");
+ 		 		return false;
+ 		 }
+ 		//账号
+ 		 if(name == ""){
+ 			 alert("账号不能为空！");
+ 			 $("input[name='name']").val("");
+ 		 		return false;
+ 		 }
+ 	 });
+  }); 
+  
 </script>
 <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 <link href="css/jquery.uls.css" rel="stylesheet"/>
@@ -66,105 +113,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				} );
 			} );
 		</script>
-		<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
-    <script src="js/easyResponsiveTabs.js"></script>
 </head>
 <body>
 <div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index"><span>Book Store</span></a>
-			</div>
-			<div class="header-right">
-				<a class="account" href="gouwuche.action">购物车</a>
+				<a href="index"><span>Book</span>Store</a>
 			</div>
 		</div>
 	</div>
-			<div class="select-box">
-				<div class="clearfix"></div>
-			</div>				
-	<div class="total-ads main-grid-border">
-		<div class="container">
-			<ol class="breadcrumb" style="margin-bottom: 5px;">
-			  <li><a href="index">主页</a></li>
-			  <li><a href="chongwu.action">宠物</a></li>
-			</ol>
-			<div class="ads-grid">
-				<div class="ads-display col-md-9">
-					<div class="wrapper">					
-					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-					  <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
-						<li role="presentation" class="active">
-						  <a href="chongwu.action" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
-							<span class="text">宠物</span>
-						  </a>
-						</li>
-					  </ul>
-					  <div id="myTabContent" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
-						   <div>
-							<div id="container">
-								<div class="clearfix"></div>
-							<c:forEach items="${book }" var="u">		
-							<ul class="list">
-									<li>
-									<a href="single.html">
-									<img src="images/fa1.jpg" title="" alt="" />
-									<section class="list-left">
-									<h5 class="title" style="color:orange;">${u.bookName }</h5>
-									<span class="adprice">￥${u.bookPrice }</span>
-									<p class="catpath">${u.bookAuthor }</p>
-									</section>
-									</a>
-								<div class="header-right">
-									<a class="account" href="goumai.action">购买</a>
-								</div>
-								<div class="header-right">
-									<a class="account" href="gouwuche.action">加入购物车</a>
-								</div>
-									<div class="clearfix"></div>
-									</li> 	
-							</ul>	
-							</c:forEach>	
+	 <section>
+			<div id="page-wrapper" class="sign-in-wrapper">
+				<div class="graphs">
+					<div class="sign-in-form">
+						<div class="signin">
+							<form action="login.do" method="post">
+								<div style="color:red" align="center">${error}</div> 
+							<div class="log-input">
+								<div class="log-input-left">
+								  &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" class="user" name="name" value="<%=cname%>" />
+								 </div>
+								<div class="clearfix"> </div>
 							</div>
+							<div class="log-input">
+								<div class="log-input-left">
+								  &nbsp; &nbsp; &nbsp; &nbsp;<input type="password" class="lock" name="pwd" value="<%=cpwd%>"/>
+								</div>
+								<div class="clearfix"> </div>
 							</div>
+							<div class="signin-rit">
+								<span class="checkbox1">
+									<label class="checkbox"><input type="checkbox" name="checkbox">记住密码 </label>
+								</span>
+								<p><a href="#">忘了密码?</a></p>
+								<div class="clearfix"> </div>
+							</div>
+							<input type="submit" value="登录" id="sub"/>
+						</form>	 
 						</div>
-					  </div>
+						<div class="new_people">
+							<a href="register.do">立即注册!</a>
+						</div>
 					</div>
 				</div>
-				</div>
-				<div class="clearfix"></div>
 			</div>
-		</div>	
-	</div>
-							
-	<script type="text/javascript">
-    $(document).ready(function() {
-
-        //Vertical Tab
-        $('#parentVerticalTab').easyResponsiveTabs({
-            type: 'vertical', //Types: default, vertical, accordion
-            width: 'auto', //auto or any width like 600px
-            fit: true, // 100% fit in a container
-            closed: 'accordion', // Start closed if in accordion view
-            tabidentify: 'hor_1', // The tab groups identifier
-            activate: function(event) { // Callback function if tab is switched
-                var $tab = $(this);
-                var $info = $('#nested-tabInfo2');
-                var $name = $('span', $info);
-                $name.text($tab.text());
-                $info.show();
-            }
-        });
-    });
-</script>
-	<!-- //Categories -->
-	<!--footer section start-->		
-		<footer>
-			<div class="footer-bottom text-center">
+		<!--footer section start-->
+			<footer class="diff">
+				<div class="footer-bottom text-center">
 			<div class="container">
 				<div class="footer-logo">
-					<a href="index"><span>Book</span>Store</a>
+					<a href="index.html"><span>Book</span>Store</a>
 				</div>
 				<div class="footer-social-icons">
 					<ul>
@@ -177,7 +175,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 		</div>
-		</footer>
+			
+			</footer>
         <!--footer section end-->
+	</section>
 </body>
 </html>
+

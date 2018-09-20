@@ -76,11 +76,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="index.html"><span>Book Store</span></a>
 			</div>
 			<div class="header-right">
-				<a class="account" href="gouwuche.action">购物车</a>
+				<a class="account" href="tbl_login">管理员登陆</a>
 			</div>
 			<div class="header-right">
-				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="login.html">登陆</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="logins.do">用户登陆</a>
 			</div>
+			
 		</div>
 	</div>
 	<div class="main-banner banner text-center">

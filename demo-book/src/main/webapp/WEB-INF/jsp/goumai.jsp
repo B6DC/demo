@@ -87,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
 			  <li><a href="index">主页</a></li>
-			  <li><a href="chongwu.action">宠物</a></li>
+			  <li><a href="goumai.action">购买</a></li>
 			</ol>
 			<div class="ads-grid">
 				<div class="ads-display col-md-9">
@@ -95,8 +95,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 					  <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
 						<li role="presentation" class="active">
-						  <a href="chongwu.action" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
-							<span class="text">宠物</span>
+						  <a href="goumai.action" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+							<span class="text">购买</span>
 						  </a>
 						</li>
 					  </ul>
@@ -111,16 +111,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<a href="single.html">
 									<img src="images/fa1.jpg" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title" style="color:orange;">${u.bookName }</h5>
-									<span class="adprice">￥${u.bookPrice }</span>
-									<p class="catpath">${u.bookAuthor }</p>
+									<h5 class="title" style="color:orange;"></h5>
+									<span class="adprice"></span>
+									<p class="catpath"></p>
 									</section>
 									</a>
 								<div class="header-right">
-									<a class="account" href="goumai.action">购买</a>
+									<a class="account" href="login">购买</a>
 								</div>
 								<div class="header-right">
-									<a class="account" href="gouwuche.action">加入购物车</a>
+									<a class="account" href="login.">加入购物车</a>
 								</div>
 									<div class="clearfix"></div>
 									</li> 	

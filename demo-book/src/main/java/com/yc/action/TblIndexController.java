@@ -45,9 +45,16 @@ public class TblIndexController {
 
 	//购物车
 	@RequestMapping("/gouwuche.action")
-	String bookinfo(Model m){
-		m.addAttribute("list", dao.findAll());	
+	String gouwuche(Model m){
+
 		return "gouwuche";
+	}
+
+	//购买(付款)
+	@RequestMapping("/goumai.action")
+	String goumai(Model m){
+
+		return "goumai";
 	}
 
 	//后台主页面(管理员)
