@@ -15,7 +15,6 @@ public class TblCart {
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
 	private Integer aid;
 	private String bookPhoto;
-	private String bookId;
 	private String bookName;
 	private String bookAuthor;
 	private String readerXame;
@@ -34,12 +33,6 @@ public class TblCart {
 	}
 	public void setBookPhoto(String bookPhoto) {
 		this.bookPhoto = bookPhoto;
-	}
-	public String getBookId() {
-		return bookId;
-	}
-	public void setBookId(String bookId) {
-		this.bookId = bookId;
 	}
 	public String getBookName() {
 		return bookName;

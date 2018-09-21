@@ -55,7 +55,7 @@ public class TblBookController {
 		dao.delete(bid);
 		return "redirect:/findAllBook.action";
 	}
-
+	
 	//添加图书
 	@RequestMapping("/addBook.action")
 	String register(  @RequestParam(value="file")MultipartFile file, Model model,HttpServletRequest request) throws ParseException{

@@ -35,7 +35,7 @@ public class TblReaderControllers {
 	}
 	//登录
 	@RequestMapping("login.do")
-	public String login(String name , String pwd,HttpSession session,Model med){
+	public String login(String name ,String pwd,HttpSession session,Model med){
 		
 		if(tblReaderBiz.login(name, pwd)){
 	     TblReader auser= accountDao.findByReaderName(name);

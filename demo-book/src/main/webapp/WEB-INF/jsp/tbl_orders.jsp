@@ -34,9 +34,9 @@
 					<th>书籍封面</th>
 					<th width="100">用户昵称</th>
 					<th width="100">书籍编号</th>
-					<th width="100">书籍名</th>
+					<th width="160">书籍名</th>
 					<th width="140">购买日期</th>
-					<th width="160">购买地址</th>
+					<th width="200">购买地址</th>
 					<th width="60">购买数量</th>
 					<th width="80">操作</th>
 				</tr>

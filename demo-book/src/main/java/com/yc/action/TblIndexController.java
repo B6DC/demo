@@ -40,7 +40,7 @@ public class TblIndexController {
 	}
 
 	//管理员登录页面
-	@RequestMapping("/tbl_login")
+	@RequestMapping("/tbl_login.action")
 	String tblLogin(){
 		return "tbl_login";
 	}
@@ -175,12 +175,14 @@ public class TblIndexController {
 		m.addAttribute("book", book);
 		
 		//界面取值
-		String book_name = request.getParameter("book_name");
-		String book_author = request.getParameter("book_author");
-		String book_price = request.getParameter("book_price"); 
+		String book_photo = request.getParameter("bookphoto"); 
+		String book_name = request.getParameter("bookname");
+		String book_author = request.getParameter("bookauthor");
+		String book_price = request.getParameter("bookprice"); 
+		
 		
 		//实例化
-		TblBook tbook = new TblBook();
+		
 		
 		return "fuwu";		
 	}

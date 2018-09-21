@@ -19,8 +19,9 @@ public class TblOrders {
 	private String bookName;
 	private String bookPhoto;
 	private String buyDate;
-	private String buyAddres;
+	private String readerAddres;
 	private Integer bookNumber;
+	
 	public Integer getOid() {
 		return oid;
 	}
@@ -57,11 +58,11 @@ public class TblOrders {
 	public void setBuyDate(String buyDate) {
 		this.buyDate = buyDate;
 	}
-	public String getBuyAddres() {
-		return buyAddres;
+	public String getReaderAddres() {
+		return readerAddres;
 	}
-	public void setBuyAddres(String buyAddres) {
-		this.buyAddres = buyAddres;
+	public void setReaderAddres(String readerAddres) {
+		this.readerAddres = readerAddres;
 	}
 	public Integer getBookNumber() {
 		return bookNumber;
