@@ -113,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul class="list">
 									<li>
 									<a href="single.html">
-									<img src="images/fa1.jpg" title="" alt="" />
+									<img src="${u.bookPhoto }" title="" />
 									<section class="list-left">
 									<h5 class="title" style="color:orange;">${u.bookName }</h5>
 									<span class="adprice">￥${u.bookPrice }</span>
@@ -124,7 +124,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<a class="account" href="login.html">购买</a>
 								</div>
 								<div class="header-right">
-									<a class="account" href="login.html">加入购物车</a>
+									<a class="account" href="gouwuche.action">加入购物车</a>
 								</div>
 									<div class="clearfix"></div>
 									</li> 	

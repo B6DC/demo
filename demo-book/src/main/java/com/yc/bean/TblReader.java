@@ -1,6 +1,5 @@
 package com.yc.bean;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +21,14 @@ public class TblReader {
 	private String readerPhone;
 	private String readerEmail;
 	private String readerMoney;
+	private String readerAddres;
+	
+	public String getReaderAddres() {
+		return readerAddres;
+	}
+	public void setReaderAddres(String readerAddres) {
+		this.readerAddres = readerAddres;
+	}
 	public Integer getReaderId() {
 		return readerId;
 	}

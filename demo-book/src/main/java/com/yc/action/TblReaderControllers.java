@@ -19,14 +19,16 @@ import org.springframework.web.multipart.MultipartFile;
 import com.yc.bean.TblReader;
 import com.yc.biz.TblReaderBiz;
 import com.yc.dao.AccountDao;
+import com.yc.dao.TblBookDao;
 
 @Controller
 @EnableAutoConfiguration
 public class TblReaderControllers {
-
+    
 	@Resource
 	TblReaderBiz tblReaderBiz;
-
+	@Resource
+	AccountDao accountDao;
 	@RequestMapping("logins.do")
 	String logins(){
 		return "login";
@@ -36,15 +38,17 @@ public class TblReaderControllers {
 	public String login(String name , String pwd,HttpSession session,Model med){
 		
 		if(tblReaderBiz.login(name, pwd)){
-			session.setAttribute("uname", name);
+	     TblReader auser= accountDao.findByReaderName(name);
+		session.setAttribute("auser", auser);
+		System.out.println(auser.getReaderName());
+		System.out.println(auser.getReaderPhoto());
 			return "index_a";
 		} 
 		med.addAttribute("error","用户名或密码输入错误!!!");		
 		return "login";
 		
 	}
-	@Resource
-	AccountDao accountDao;
+	
 	@RequestMapping("register.do")
 	String register(){
 		return "register";
@@ -54,7 +58,8 @@ public class TblReaderControllers {
 	@RequestMapping("newregister.do")
 	public String newregister(String name,String names,String sex,String phone,String email,String money,
 			String pwd,String pwds, @RequestParam(value="file")MultipartFile file, Model model,HttpServletRequest request){
-		TblReader tReader =new TblReader();
+	    String addres=null;
+		TblReader tReader=new TblReader() ;
 		tReader.setReaderName(name);
 		tReader.setReaderXame(names);
 		tReader.setReaderSex(sex);
@@ -62,6 +67,7 @@ public class TblReaderControllers {
 		tReader.setReaderEmail(email);
 		tReader.setReaderMoney(money);
 		tReader.setReaderPassword(pwd);
+		tReader.setReaderAddres(addres);
 		TblReader user  =  accountDao.findByReaderName(name);
 		TblReader user1  =  accountDao.findByReaderXame(names);
 		if (user!=null || user1!=null) {
@@ -90,7 +96,7 @@ public class TblReaderControllers {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}     
-		tReader.setReaderPhoto(fileName);
+		tReader.setReaderPhoto("image/"+fileName);
 		tblReaderBiz.register(tReader);
 		System.out.println(tReader.getReaderPhoto());
 		return "login";	

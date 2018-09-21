@@ -142,24 +142,22 @@ var elem=$('#container ul');
 								<div class="clearfix"></div>
 								
 							<ul class="list">
-								<a href="single.html">
 									<li>
+									<a href="">
 									<img src="images/fa1.jpg" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title">$u.bookName</h5>
-									<span class="adprice">$290</span>
-									<p class="catpath">Accessories » Men</p>
+									<h5 class="title">${u.bname}</h5>
+									<span class="adprice">${u.bprice}</span>
+									<p class="catpath">${u.bauthor }</p>
 									</section>
-									<section class="list-right">
-									<span class="date">Today, 17:55</span>
-									<span class="cityname">City name</span>
-									
-									
-									</section>
+									</a>
+									<div class="header-right">
+										<a class="account" href="">待付款</a>
+									</div>
 									<div class="clearfix"></div>
 									
 									</li> 
-								</a>
+							
 							</ul>
 							
 							</div>

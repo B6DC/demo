@@ -32,11 +32,11 @@
 			<thead>
 				<tr class="text-c">
 					<th width="60">编号</th>
-					<th width="80">图像</th>
+					<th width="120">用户图像</th>
 					<th width="60">昵称</th>
 					<th width="120">书籍封面</th>
 					<th width="60">书号</th>
-					<th width="60">书名</th>
+					<th width="100">书名</th>
 					<th width="60">作者</th>
 					<th>留言内容</th>
 					<th width="80">发表时间</th>

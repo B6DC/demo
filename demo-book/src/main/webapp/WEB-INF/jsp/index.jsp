@@ -228,7 +228,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<c:forEach items="${book }" var="u">
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="images/p1.jpg"/>
+											<img src="${u.bookPhoto }"/>
 											<span class="price">￥${u.bookPrice }</span>
 										</a> 
 										<div class="ad-info">
@@ -243,7 +243,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<c:forEach items="${book1 }" var="u">
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="images/p1.jpg"/>
+											<img src="${u.bookPhoto }"/>
 											<span class="price">￥${u.bookPrice }</span>
 										</a> 
 										<div class="ad-info">

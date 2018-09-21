@@ -50,7 +50,7 @@
 					<td>${u.bookId}</td>
 					<td>${u.bookName}</td>
 					<td>${u.buyDate}</td>
-					<td>${u.buyAddres}</td>
+					<td>${u.readerAddres}</td>
 					<td>${u.bookNumber}</td>
 					<td class="td-manage">
 					<a style="text-decoration:none" class="ml-5" onClick="picture_edit('订单修改','tbl_orders-add.html','10001')" href="javascript:;" title="修改"><i class="Hui-iconfont">&#xe6df;</i></a> 

@@ -34,32 +34,32 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>书号：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="格式：A001(大写字母+三位数)" id="articletitle" name="book_id">
+				<input type="text" class="input-text" value="" placeholder="格式：A001" id="articletitle" name="book_id">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">书名：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="格式：三体(直接写书名)" id="articletitle2" name="book_name">
+				<input type="text" class="input-text" value="" placeholder="格式：三体" id="articletitle2" name="book_name">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>作者：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="大龙(直接写作者)" id="author" name="book_author">
+				<input type="text" class="input-text" value="" placeholder="格式：大龙" id="author" name="book_author">
 			</div>
 		</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>类型：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="文化类(直接写类型)" id="author" name="book_type">
+				<input type="text" class="input-text" value="" placeholder="格式：游戏" id="author" name="book_type">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>出版社：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="北京联合出版社(直接写出版社名)" id="articletitle" name="book_pubname">
+				<input type="text" class="input-text" value="" placeholder="格式:北京联合出版社" id="articletitle" name="book_pubname">
 			</div>
 		</div>
 		<div class="row cl">

@@ -102,6 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="text" value="性别" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '性别';}">
 							<input type="text" value="邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '邮箱';}">
 							<input type="text" value="电话" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '电话';}">
+							<input type="text" value="地址" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '地址';}">
 							<input type="text" value="余额" disabled="disabled">
 							<a><input type="submit" value="点击确认修改"></a>
 						</form>

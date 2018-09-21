@@ -3,6 +3,7 @@ package com.yc.action;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -19,43 +20,6 @@ public class TblIndexController {
 
 	@Resource
 	TblBookDao dao;
-
-	//书城主页面(用户没登陆特价书籍)
-	@RequestMapping("/index")
-	String index(Model m){
-		m.addAttribute("list", dao.findAll());
-		List<TblBook> book = dao.findBybookType("手机");
-		List<TblBook> book1 = dao.findBybookType("文学");
-		m.addAttribute("book", book);
-		m.addAttribute("book1", book1);
-		return "index";
-	}
-
-
-	//书城主页面(用户已登录特价书籍)
-	@RequestMapping("/index_a")
-	String index_a(Model m){
-		m.addAttribute("list", dao.findAll());
-		List<TblBook> book = dao.findBybookType("手机");
-		List<TblBook> book1 = dao.findBybookType("文学");
-		m.addAttribute("book", book);
-		m.addAttribute("book1", book1);
-		return "index_a";
-	}
-
-	//购物车
-	@RequestMapping("/gouwuche.action")
-	String gouwuche(Model m){
-
-		return "gouwuche";
-	}
-
-	//购买(付款)
-	@RequestMapping("/goumai.action")
-	String goumai(Model m){
-
-		return "goumai";
-	}
 
 	//后台主页面(管理员)
 	@RequestMapping("/book.action")
@@ -80,6 +44,47 @@ public class TblIndexController {
 	String tblLogin(){
 		return "tbl_login";
 	}
+
+	//书城主页面(用户没登陆特价书籍)
+	@RequestMapping("/index")
+	String index(Model m){
+		m.addAttribute("list", dao.findAll());
+		List<TblBook> book = dao.findBybookType("手机");
+
+		List<TblBook> book1 = dao.findBybookType("文学");
+		m.addAttribute("book", book);
+		m.addAttribute("book1", book1);
+		return "index";
+	}
+
+
+	//书城主页面(用户已登录特价书籍)
+	@RequestMapping("/index_a")
+	String index_a(Model m){
+		m.addAttribute("list", dao.findAll());
+		List<TblBook> book = dao.findBybookType("手机");
+		List<TblBook> book1 = dao.findBybookType("文学");
+		m.addAttribute("book", book);
+		m.addAttribute("book1", book1);
+		return "index_a";
+	}
+
+	//购物车
+	@RequestMapping("/gouwuche.action")
+	String gouwuche(Model model,HttpServletRequest request){
+		
+
+		return "gouwuche";
+	}
+
+	//购买(付款)
+	@RequestMapping("/goumai.action")
+	String goumai(Model m){
+
+		return "goumai";
+	}
+
+
 
 	//书城主页面-手机
 	@RequestMapping("/shouji.action")
@@ -164,10 +169,19 @@ public class TblIndexController {
 
 	//书城主页面-服务
 	@RequestMapping("/fuwu.action")
-	String fuwu(Model m){			
+	String fuwu(Model m,HttpServletRequest request){			
 		m.addAttribute("list", dao.findAll());			
 		List<TblBook> book = dao.findBybookType("服务");		
 		m.addAttribute("book", book);
+		
+		//界面取值
+		String book_name = request.getParameter("book_name");
+		String book_author = request.getParameter("book_author");
+		String book_price = request.getParameter("book_price"); 
+		
+		//实例化
+		TblBook tbook = new TblBook();
+		
 		return "fuwu";		
 	}
 

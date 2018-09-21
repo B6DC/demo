@@ -53,15 +53,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  		 var names=$("input[name='names']").val();
  		 var email=$("input[name='email']").val();
  		 var phone=$("input[name='phone']").val();
+ 		 var money=$("input[name='money']").val();
+ 		 var photo=$("input[name='photo']").val();
  		 var reg =/^[\d_a-zA-Z]\w*\.?\w+@[\d_a-zA-Z]{2,}\.[a-zA-Z]{2,4}$/;
  		 var reg1 =/1[3-9]\d{9}$/;
- 		 //密码   阻止表单提交
- 		 if(pwd!=cpwd){
- 			 alert("两次密码输入不一致");
- 			 $("input[name='pwd']").val("");
- 			 $("input[name='pwds']").val("");
- 		 		return false;
- 		 }
  		//账号
  		 if(name == ""){
  			 alert("账号不能为空！");
@@ -93,7 +88,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  			 alert("手机号格式不正确!");
  			 $("input[name='phone']").val("");
  		 		return false;
- 		 }		
+ 		 }
+ 		//密码   阻止表单提交
+ 		if(pwd == ""){
+			 alert("密码不能为空!");
+			 $("input[name='pwd']").val("");
+		 		return false;
+		 }else if(cpwd == ""){
+			 alert("确认密码不能为空!");
+			 $("input[name='pwds']").val("");
+		 		return false;
+		 }else if(pwd!=cpwd){
+ 			 alert("两次密码输入不一致");
+ 			 $("input[name='pwd']").val("");
+ 			 $("input[name='pwds']").val("");
+ 		 		return false;
+ 		 }
+ 		//余额
+		 if(money == ""){
+			 alert("余额不能为空!");
+			 $("input[name='money']").val("");
+		 		return false;
+		 }
+		//余额
+		 if(photo == ""){
+			 alert("图像不能为空!");
+			 $("input[name='photo']").val("");
+		 		return false;
+		 }
  	 });
   }); 
   
