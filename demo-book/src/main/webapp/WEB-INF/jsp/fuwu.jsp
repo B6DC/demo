@@ -68,6 +68,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
 		<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
     <script src="js/easyResponsiveTabs.js"></script>
+    
+<style type="text/css">
+ #dy2 img[src=""],img:not([src]){
+      opacity:0;
+ }
+</style>
+
+
+<script>
+		 $(function(){
+		 $("#sub").click(function(){
+			  var name=$("a[id='xxame']").val(); 
+			 if(name == ""){
+				
+				 window.location.href='logins.do';
+				 return false;
+			 }
+		 });
+		  });
+</script>
+
+
 </head>
 <body>
 <div class="header">
@@ -79,10 +101,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="login.html">购物车</a>
 			</div>
 			<div class="header-right">
-				<a class="account" href="">${auser.readerXame }</a>
+				 <a class="account" id="xxame"  href="#">${auser.readerXame }</a> 
+				<%-- <input  name="xxame" value="${auser.readerXame }"> --%>
 			</div>
-			<div class="header-right" >
-				 <a  href="myinfo.action"> <img style="height:80px;width:80px;border:2px solid #99D3F5;border-radius:50%;" src="${auser.readerPhoto }"></a>
+			<div class="header-right" id="dy2" style="height:60px;width:60px;border-radius:50%;">
+				 <a  href="myinfo.action"> <img src="${auser.readerPhoto }"></a>
 			</div>
 		</div>
 	</div>
@@ -126,7 +149,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<a class="account" href="login.html">购买</a>
 								</div>
 								<div class="header-right">
-									<a class="account" href="gouwuche.action">加入购物车</a>
+									<form action="gouwuche.action" method="post">
+										<input class="account" onClick="panduan()" id="sub" type="submit" value="加入购物车">
+									</form>
 								</div>
 									<div class="clearfix"></div>
 									</li> 	

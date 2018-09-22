@@ -46,7 +46,6 @@
 		<table class="table table-border table-bordered table-bg table-hover table-sort table-responsive">
 			<thead>
 				<tr class="text-c">
-					
 					<th width="80">编号</th>
 					<th width="80">书号</th>
 					<th width="80">书名</th>

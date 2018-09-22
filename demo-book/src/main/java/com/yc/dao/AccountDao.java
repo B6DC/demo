@@ -28,13 +28,17 @@ public int addReader(String name, String names, String sex, String photo,String 
 
 public TblReader findByReaderName(String name);
 public TblReader findByReaderXame(String names);
+@Transactional
+@Modifying
+@Query(nativeQuery=true,value="update tbl_reader set reader_password=?1 where reader_name=?2")
+public int updatePwd(String pwd, String name);
+public TblReader findByReaderNameAndReaderEmail(String name, String email);
 
-/*@Query(nativeQuery=true,value="select * from tbl_reader where reader_name=? and reader_password=?")
-public TblReader find(String readerName,String readerPassword);
+@Transactional
+@Modifying
+@Query(nativeQuery=true,value="update tbl_reader set reader_password=?1 where reader_id=?2")
+public int updatePwds(String pwd,int s);
 
-*/
-/*@Query(nativeQuery=true,value="select * from user where uname=? and pwd=?")
-public User find(String Uname,String pwd);
-*/
+
 }
 

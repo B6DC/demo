@@ -1,9 +1,11 @@
 package com.yc.action;
 
+import java.io.Writer;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -50,7 +52,6 @@ public class TblIndexController {
 	String index(Model m){
 		m.addAttribute("list", dao.findAll());
 		List<TblBook> book = dao.findBybookType("手机");
-
 		List<TblBook> book1 = dao.findBybookType("文学");
 		m.addAttribute("book", book);
 		m.addAttribute("book1", book1);
@@ -72,7 +73,7 @@ public class TblIndexController {
 	//购物车
 	@RequestMapping("/gouwuche.action")
 	String gouwuche(Model model,HttpServletRequest request){
-		
+
 
 		return "gouwuche";
 	}
@@ -84,15 +85,13 @@ public class TblIndexController {
 		return "goumai";
 	}
 
-
-
 	//书城主页面-手机
 	@RequestMapping("/shouji.action")
 	String shouji(Model m){
 		m.addAttribute("list", dao.findAll());
 		List<TblBook> book = dao.findBybookType("手机");
 		m.addAttribute("book", book);
-		return "shouji";		
+			return "shouji";			
 	}
 
 	//书城主页面-汽车
@@ -173,17 +172,19 @@ public class TblIndexController {
 		m.addAttribute("list", dao.findAll());			
 		List<TblBook> book = dao.findBybookType("服务");		
 		m.addAttribute("book", book);
-		
+
 		//界面取值
 		String book_photo = request.getParameter("bookphoto"); 
 		String book_name = request.getParameter("bookname");
 		String book_author = request.getParameter("bookauthor");
 		String book_price = request.getParameter("bookprice"); 
-		
-		
+		String reader_xame = request.getParameter("readerxame");
+		String reader_addres = request.getParameter("readeraddres");
+		String cart_type = request.getParameter("carttype");
 		//实例化
 		
-		
+
+
 		return "fuwu";		
 	}
 

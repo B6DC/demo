@@ -30,7 +30,7 @@
 </head>
 <body>
 <article class="page-container">
-	<form class="form form-horizontal" id="form-article-add"  method="post" action="addBook.action">
+	<form class="form form-horizontal" enctype="multipart/form-data" id="form-article-add"  method="post" action="addBook.action">
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>书号：</label>
 			<div class="formControls col-xs-8 col-sm-9">

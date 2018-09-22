@@ -30,7 +30,9 @@ public class TblOrdersController {
 	
 	@RequestMapping("/deleteOrders.action")
 	String deletebook(Integer oid,Writer out,HttpServletResponse response,HttpServletRequest request) throws IOException{
+		
 			dao.delete(oid);
+			
 		return "redirect:/findAllOrders.action";
 	}
 	

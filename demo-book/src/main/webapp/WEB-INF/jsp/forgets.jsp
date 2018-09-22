@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Myinfo</title>
+<title>Contact</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-select.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -68,54 +68,135 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
 		<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css " />
     <script src="js/easyResponsiveTabs.js"></script>
-    	<style type="text/css">
-			.dy1 img[src = ""]{
-			opacity:0;}
-		</style>
+	<style type="text/css">
+			#passworde{
+				type:password;
+			} 
+		</style>	
 </head>
 <body>
 <div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index_a"><span>Book</span>Store</a>
+				<a href="index.html"><span>Book</span>Store</a>
 			</div>
 			<div class="header-right">
-				<a class="account" href="gouwuche.action">购物车</a>
-			</div>
-			<div class="header-right">
-				<a class="account" href="#">${auser.readerXame }</a>
-			</div>
-			<div class="header-right" >
-				 <a  href="myinfo.action"> <img style="height:60px;width:60px;border:2px solid #99D3F5;border-radius:50%;" src="${auser.readerPhoto }"></a>
-			</div>
+			<a class="account" href="logins.do">登录</a>
+		</div>
 		</div>
 	</div>
 	<div class="banner text-center">
 	  <div class="container"></div>
 	</div>
-	<!-- Feedback -->
-	<div class="feedback main-grid-border">
+	<!-- Terms of use -->
+	<div class="contact main-grid-border">
 		<div class="container">
-			<h2 class="head">个人信息</h2>
-			<div class="feed-back">
-				<div class="feed-back-form">
-					<form>
-					<span>用户详情</span>
-							<input type="text" value="昵称" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '昵称';}">
-							<input type="text" value="性别" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '性别';}">
-							<input type="text" value="邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '邮箱';}">
-							<input type="text" value="电话" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '电话';}">
-							<input type="text" value="地址" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '地址';}">
-							<input type="text" value="余额" disabled="disabled">
-							<a><input type="submit" value="点击确认修改"></a>
-						</form>
-				</div>
+			<h2 class="head text-center">忘记密码</h2>
+			<section id="hire">    
+				<form id="filldetails" action="forgetss.do" method="post"
+			           enctype="multipart/form-data">
+					  <div class="field name-box">
+							<input type="password" id="pwd" name="pwd" placeholder="请输入您的新密码"/>
+							<label for="name">新密码</label>
+							<span class="ss-icon">check</span>
+					  </div>
+					  <hr>
+					  <div class="field name-box">
+							<input type="password" id="pwd" name="pwds" placeholder="请再次输入您的新密码"/>
+							<label for="name">确认新密码</label>
+							<span class="ss-icon">check</span>
+					  </div>
+
+			<div>
+				<input class="button" type="submit" value="确认修改" />		
+			</div>	
+		</form>	
+		<div class="clear"></div>
+		
+		<!-- JavaScript Includes -->
+		<script src="js/jquery.knob.js"></script>
+
+		<!-- jQuery File Upload Dependencies -->
+		<script src="js/jquery.ui.widget.js"></script>
+		<script src="js/jquery.fileupload.js"></script>
+		
+		<!-- Our main JS file -->
+		<script src="js/script.js"></script>
 			</div>
+			</section>
+			<script>
+				  $('textarea').blur(function () {
+				$('#hire textarea').each(function () {
+					$this = $(this);
+					if (this.value != '') {
+						$this.addClass('focused');
+						$('textarea + label + span').css({ 'opacity': 1 });
+					} else {
+						$this.removeClass('focused');
+						$('textarea + label + span').css({ 'opacity': 0 });
+					}
+				});
+			});
+			$('#hire .field:first-child input').blur(function () {
+				$('#hire .field:first-child input').each(function () {
+					$this = $(this);
+					if (this.value != '') {
+						$this.addClass('focused');
+						$('.field:first-child input + label + span').css({ 'opacity': 1 });
+					} else {
+						$this.removeClass('focused');
+						$('.field:first-child input + label + span').css({ 'opacity': 0 });
+					}
+				});
+			});
+			$('#hire .field:nth-child(2) input').blur(function () {
+				$('#hire .field:nth-child(2) input').each(function () {
+					$this = $(this);
+					if (this.value != '') {
+						$this.addClass('focused');
+						$('.field:nth-child(2) input + label + span').css({ 'opacity': 1 });
+					} else {
+						$this.removeClass('focused');
+						$('.field:nth-child(2) input + label + span').css({ 'opacity': 0 });
+					}
+				});
+			});
+			$('#hire .field:nth-child(3) input').blur(function () {
+				$('#hire .field:nth-child(3) input').each(function () {
+					$this = $(this);
+					if (this.value != '') {
+						$this.addClass('focused');
+						$('.field:nth-child(3) input + label + span').css({ 'opacity': 1 });
+					} else {
+						$this.removeClass('focused');
+						$('.field:nth-child(3) input + label + span').css({ 'opacity': 0 });
+					}
+				});
+			});
+			$('#hire .field:nth-child(4) input').blur(function () {
+				$('#hire .field:nth-child(4) input').each(function () {
+					$this = $(this);
+					if (this.value != '') {
+						$this.addClass('focused');
+						$('.field:nth-child(4) input + label + span').css({ 'opacity': 1 });
+					} else {
+						$this.removeClass('focused');
+						$('.field:nth-child(4) input + label + span').css({ 'opacity': 0 });
+					}
+				});
+			});
+		  //@ sourceURL=pen.js
+		</script>    
+		<script>
+	  if (document.location.search.match(/type=embed/gi)) {
+		window.parent.postMessage("resize", "*");
+	  }
+	</script>
 		</div>	
 	</div>
-	<!-- // Feedback -->
+	<!-- // Terms of use -->
 	<!--footer section start-->		
-		<footer>	
+		<footer>
 			<div class="footer-bottom text-center">
 			<div class="container">
 				<div class="footer-logo">

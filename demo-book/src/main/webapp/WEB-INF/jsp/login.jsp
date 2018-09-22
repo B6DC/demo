@@ -145,7 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<span class="checkbox1">
 									<label class="checkbox"><input type="checkbox" name="checkbox">记住密码 </label>
 								</span>
-								<p><a href="#">忘了密码?</a></p>
+								<p><a href="forgetx.do">忘了密码?</a></p>
 								<div class="clearfix"> </div>
 							</div>
 							<input type="submit" value="登录" id="sub"/>

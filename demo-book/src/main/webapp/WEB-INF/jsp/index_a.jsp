@@ -66,8 +66,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					},
 					quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
 				} );
-			} );
-		</script>
+			} );			
+</script>
+<style>
+
+ #dy1 img[src=""],img:not([src]){
+
+      opacity:0;
+
+ }
+
+</style>
 </head>
 <body>
 	<div class="header">
@@ -81,8 +90,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-right">
 				<a class="account" href="">${auser.readerXame }</a>
 			</div>
-			<div class="header-right" >
-				 <a  href="myinfo.action"> <img style="height:80px;width:80px;border:2px solid #99D3F5;border-radius:50%;" src="${auser.readerPhoto }"></a>
+			<div class="header-right" id="dy1">
+				 <a  href="myinfo.action"> <img style="height:60px;width:60px;border-radius:50%;" src="${auser.readerPhoto }"></a>
 			</div>
 		</div>
 	</div>
@@ -101,7 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-mobile"></i></div>
-									<h4 class="clrchg">手机</h4>
+									<h4 class="clrchg" id="shouji(id)">手机</h4>
 								</div>
 							</div>
 						</a>

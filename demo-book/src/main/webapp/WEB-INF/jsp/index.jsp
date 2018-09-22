@@ -91,15 +91,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	
 		<!-- content-starts-here -->
-		<div class="content">
+		
 			<div class="categories">
 				<div class="container">
-					<div class="col-md-2 focus-grid">
+					<div class="col-md-2 focus-grid" >
 						<a href="shouji.action">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-mobile"></i></div>
-									<h4 class="clrchg">手机</h4>
+										<h4 class="clrchg">手机</h4>
 								</div>
 							</div>
 						</a>
@@ -309,6 +309,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		</footer>
-        <!--footer section end-->
 </body>
 </html>

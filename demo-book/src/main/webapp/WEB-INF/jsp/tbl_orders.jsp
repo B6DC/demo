@@ -94,7 +94,9 @@ function picture_edit(title,url,id){
 
 /*图片-删除*/
 function picture_del(id){
+	
 	var oid=id;
+
 	layer.confirm('确认要删除吗？',function(index){
 		$.post("deleteOrders.action",{oid:oid},function(data){
 		$.ajax({
