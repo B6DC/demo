@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Categories</title>
+<title>FuWu</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-select.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -78,32 +78,92 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script>
 		 $(function(){
-		 $("#sub").click(function(){
-			  var name=$("a[id='xxame']").val(); 
+		 $("#sub1").click(function(){
+			  var name=$("input[name='hame']").val(); 
 			 if(name == ""){
-				
+				 alert("请先登录书城");
 				 window.location.href='logins.do';
+				 var name=$("input[name='hame']").val(); 
 				 return false;
+			 }else{
+				 alert("添加完成");
 			 }
 		 });
 		  });
+		 
+		 $(function(){
+			 $("#sub2").click(function(){
+				  var name=$("input[name='hame']").val(); 
+				 if(name == ""){
+					 alert("请先登录书城");
+					 window.location.href='logins.do';
+					 var name=$("input[name='hame']").val(); 
+					 return false;
+				 }
+			 });
+			});
+		 
+		 
+		 $(function(){
+			 $("#sub3").click(function(){
+				  var same=$("input[name='same']").val(); 
+				 if(same == ""){
+					 window.location.href='index';
+					 var same=$("input[name='same']").val(); 
+					 return false;
+				 }else{
+					 window.location.href='index_a';
+				 }
+			 });
+		});
+		 
+		 $(function(){
+			 $("#sub5").click(function(){
+				  var same=$("input[name='same']").val(); 
+				 if(same == ""){
+					 window.location.href='index';
+					 var same=$("input[name='same']").val(); 
+					 return false;
+				 }else{
+					 window.location.href='index_a';
+				 }
+			 });
+		});
+		 
+		 
+		 
+		 
 </script>
 
 
 </head>
 <body>
+
 <div class="header">
+
+
 		<div class="container">
-			<div class="logo">
-				<a href="index"><span>Book Store</span></a>
-			</div>
+			<div class="logo" id="sub3">
+				<form  method="post">
+					<a><span>Book<input style="border: 0px;outline:none;cursor: pointer;color:rgb(253,253,253);height:1px;width:1px;"  value="${auser.readerXame }" name="same"/> Store</span></a>
+				</form>
+			</div>	
+		
 			<div class="header-right">
-				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="login.html">购物车</a>
+					<form action="fuwu.action" method="post">
+						<c:forEach items="${book }" var="u">	
+							<input value="${u.bookId }" name="bid" type="hidden"/>	
+						</c:forEach>
+						<!-- &nbsp;&nbsp;&nbsp;&nbsp;<a class="button" type="submit" >购物车</a> -->
+						&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit">购物车</button>
+					</form>
+			
+				<!-- &nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="gouwuche.action" >购物车</a> -->
 			</div>
-			<div class="header-right">
-				 <a class="account" id="xxame"  href="#">${auser.readerXame }</a> 
-				<%-- <input  name="xxame" value="${auser.readerXame }"> --%>
+			<div class="header-right" >
+				 <input  name="hame" value="${auser.readerXame }" style="border: 0px;outline:none;cursor: pointer;height:40px;width:50px;color:rgb(253,253,253);margin-top:15px;"/> 
 			</div>
+
 			<div class="header-right" id="dy2" style="height:60px;width:60px;border-radius:50%;">
 				 <a  href="myinfo.action"> <img src="${auser.readerPhoto }"></a>
 			</div>
@@ -145,12 +205,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<p class="catpath">${u.bookAuthor }</p>
 									</section>
 									</a>
+									
 								<div class="header-right">
-									<a class="account" href="login.html">购买</a>
+									<form action="goumai.action" method="post">
+										<input class="button"  id="sub2" type="submit" value="立即购买">
+									</form>
 								</div>
 								<div class="header-right">
-									<form action="gouwuche.action" method="post">
-										<input class="account" onClick="panduan()" id="sub" type="submit" value="加入购物车">
+									<form action="fuwu3.action" method="post">
+										<c:forEach items="${book }" var="u">	
+											<input value="${u.bookId }" name="bbid" type="hidden"/>
+											<input value="${u.bookPhoto }" name="bbpo" type="hidden"/>
+											<input value="${u.bookName }" name="bbne" type="hidden"/>
+											<input value="${u.bookPrice }" name="bbpe" type="hidden"/>
+											<input value="${u.bookAuthor }" name="bbar" type="hidden"/>
+											<input value="${auser.readerXame }" name="brxe" type="hidden"/>
+											<input value="${auser.readerPhoto }" name="brpo" type="hidden"/>
+										</c:forEach>
+										<input class="button" id="sub1" type="submit" value="加入购物车" />
 									</form>
 								</div>
 									<div class="clearfix"></div>
@@ -168,7 +240,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>	
 	</div>
-							
+						
 	<script type="text/javascript">
     $(document).ready(function() {
 
@@ -188,6 +260,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
         });
     });
+    
 </script>
 	<!-- //Categories -->
 	<!--footer section start-->		
@@ -195,7 +268,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="footer-bottom text-center">
 			<div class="container">
 				<div class="footer-logo">
-					<a href="index"><span>Book</span>Store</a>
+					<form  method="post">
+						<a id="sub5"><span>Book</span>Store</a>
+					</form>
 				</div>
 				<div class="footer-social-icons">
 					<ul>
@@ -209,6 +284,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		</footer>
-        <!--footer section end-->
+       
+       
+     
 </body>
 </html>

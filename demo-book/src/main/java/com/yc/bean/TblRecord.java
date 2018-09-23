@@ -21,6 +21,7 @@ public class TblRecord {
 	private String bookPhoto;
 	private String readerXame;
 	private Date backDate;
+	private String recordAddres;
 	public Integer getTid() {
 		return tid;
 	}
@@ -57,8 +58,12 @@ public class TblRecord {
 	public void setBackDate(Date backDate) {
 		this.backDate = backDate;
 	}
-	
-	
+	public String getRecordAddres() {
+		return recordAddres;
+	}
+	public void setRecordAddres(String recordAddres) {
+		this.recordAddres = recordAddres;
+	}
 	
 	
 }

@@ -185,7 +185,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="fuwu.action#parentVerticalTab10">
+						<a href="fuwu1.action#parentVerticalTab10">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-shield"></i></div>

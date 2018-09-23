@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index"><span>Book Store</span></a>
+				<a href="index_a"><span>Book Store</span></a>
 			</div>
 			<div class="header-right">
 				<a class="account" href="gouwuche.action">购物车</a>

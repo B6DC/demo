@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Fashion</title>
+<title>Cart</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-select.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -93,16 +93,31 @@ var elem=$('#container ul');
 		}
 	});
 });
+
+
+
+$(function(){
+	 $("#sub4").click(function(){
+		  var add=$("input[name='addres']").val(); 
+		 if(add == ""){
+			 alert("请先添加收货地址");
+			 var add=$("input[name='addres']").val(); 
+			 return false;
+		 }else{
+			 alert("付款成功");
+			 
+			 window.location.href='gouwuche.action';
+		 }
+	 });
+});
+
 </script>
 </head>
 <body>
 <div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index"><span>Book</span>Store</a>
-			</div>
-			<div class="header-right">
-				<a class="account" href="gouwuche.action">购物车</a>
+				<a href="index_a"><span>Book</span>Store</a>
 			</div>
 		</div>
 	</div>
@@ -110,16 +125,15 @@ var elem=$('#container ul');
 	<!-- Electronic appliances -->
 	<div class="total-ads main-grid-border">
 		<div class="container">
-			<div class="select-box">
-			
+			<div class="select-box" style="text-align:center; vertical-align:middel;" >
+					<input name="addres" value="" placeholder="请添加收货地址" style="height:30px;width:350px;"/>
 				<div class="clearfix"></div>
 			</div>
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
-			  <li><a href="index">主页</a></li>
-			  <li><a href="gouwuche.action">购物车</a></li>
+			  <li><a href="index_a">主页</a></li>
+			   <li><a href="gouwuche.action">购物车</a></li>
 			</ol>
 			<div class="ads-grid">
-				
 				<div class="ads-display col-md-9">
 					<div class="wrapper">					
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
@@ -135,31 +149,34 @@ var elem=$('#container ul');
 						   <div>
 												<div id="container">
 								<div class="view-controls-list" id="viewcontrols">
-									<label>view :</label>
+									<label>View :</label>
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
 								</div>
 								<div class="clearfix"></div>
-								
+							<c:forEach items="${book }" var="u">	
 							<ul class="list">
 									<li>
 									<a href="">
-									<img src="images/fa1.jpg" title="" alt="" />
+									<img src="${u.bookPhoto }" title="" alt="" />
 									<section class="list-left">
-									<h5 class="title">${u.bname}</h5>
-									<span class="adprice">${u.bprice}</span>
-									<p class="catpath">${u.bauthor }</p>
+									<h5 class="title">${u.bookName}</h5>
+									<span class="adprice">￥${u.bookPrice}</span>
+									<p class="catpath">${u.bookAuthor }</p>
 									</section>
 									</a>
 									<div class="header-right">
-										<a class="account" href="">待付款</a>
+										<a class="account" href="#">${u.cartType }</a>
 									</div>
 									<div class="clearfix"></div>
-									
 									</li> 
-							
 							</ul>
-							
+							</c:forEach>
+							<div class="header-right">
+								<form action="index_a" method="post">
+									<a class="account" id="sub4" type="submit">点击付款</a><input value="总金额：￥:${u.bookPrice }" disabled="disabled" style="color:red;margin-top:20px;height:33px;width:150px;"/>
+								</form>
+							</div>
 							</div>
 							</div>
 						</div>

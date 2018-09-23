@@ -18,10 +18,18 @@ public class TblOrders {
 	private String bookId;
 	private String bookName;
 	private String bookPhoto;
+	private String bookPrice;
 	private String buyDate;
-	private String readerAddres;
+	private String orderAddres;
 	private Integer bookNumber;
 	
+	
+	public String getBookPrice() {
+		return bookPrice;
+	}
+	public void setBookPrice(String bookPrice) {
+		this.bookPrice = bookPrice;
+	}
 	public Integer getOid() {
 		return oid;
 	}
@@ -58,11 +66,11 @@ public class TblOrders {
 	public void setBuyDate(String buyDate) {
 		this.buyDate = buyDate;
 	}
-	public String getReaderAddres() {
-		return readerAddres;
+	public String getOrderAddres() {
+		return orderAddres;
 	}
-	public void setReaderAddres(String readerAddres) {
-		this.readerAddres = readerAddres;
+	public void setOrderAddres(String orderAddres) {
+		this.orderAddres = orderAddres;
 	}
 	public Integer getBookNumber() {
 		return bookNumber;
@@ -70,8 +78,6 @@ public class TblOrders {
 	public void setBookNumber(Integer bookNumber) {
 		this.bookNumber = bookNumber;
 	}
-	
-	
 	
 	
 }

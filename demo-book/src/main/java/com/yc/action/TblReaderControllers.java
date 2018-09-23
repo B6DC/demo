@@ -44,7 +44,7 @@ public class TblReaderControllers {
 			session.setAttribute("auser", auser);
 			System.out.println(auser.getReaderName());
 			System.out.println(auser.getReaderPhoto());
-			return "index_a";
+			return "redirect:/index_a";
 		}
 		med.addAttribute("error", "用户名或密码输入错误!!!");
 		return "login";
@@ -61,7 +61,6 @@ public class TblReaderControllers {
 	public String newregister(String name, String names, String sex, String phone, String email, String money,
 			String pwd, String pwds, @RequestParam(value = "file") MultipartFile file, Model model,
 			HttpServletRequest request) {
-		String addres = null;
 		TblReader tReader = new TblReader();
 		tReader.setReaderName(name);
 		tReader.setReaderXame(names);
@@ -70,7 +69,6 @@ public class TblReaderControllers {
 		tReader.setReaderEmail(email);
 		tReader.setReaderMoney(money);
 		tReader.setReaderPassword(pwd);
-		tReader.setReaderAddres(addres);
 		TblReader user = accountDao.findByReaderName(name);
 		TblReader user1 = accountDao.findByReaderXame(names);
 		if (user != null || user1 != null) {

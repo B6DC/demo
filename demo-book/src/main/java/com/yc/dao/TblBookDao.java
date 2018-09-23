@@ -19,12 +19,15 @@ import com.yc.bean.TblBook;
 		
 
 		List<TblBook> findBybookType(String string);
+		List<TblBook> findBybookId(String bid);
 		
 		@Query(value = "update tbl_book set book_type=?1,book_pubname=?2,book_price=?3,book_amount=?4 where book_name=?5 ", nativeQuery = true)
 		@Transactional
 		@Modifying
 		void updateOrder(String book_type, String book_pubname, String book_price,
 				Integer book_amount, String book_name);
+
+		
 		
 	}
 

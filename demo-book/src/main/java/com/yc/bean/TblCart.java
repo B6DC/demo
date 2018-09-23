@@ -14,19 +14,26 @@ public class TblCart {
 	@Id //主键注解
 	@GeneratedValue(strategy=GenerationType.AUTO)//配置主键值的生成机制
 	private Integer aid;
+	private String bookId;
 	private String bookPhoto;
 	private String bookName;
 	private String bookAuthor;
+	private String bookPrice;
 	private String readerXame;
 	private String readerPhoto;
-	private String readerAddres;
+	private String bookNumber;
 	private String cartType;
-	
 	public Integer getAid() {
 		return aid;
 	}
 	public void setAid(Integer aid) {
 		this.aid = aid;
+	}
+	public String getBookId() {
+		return bookId;
+	}
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
 	}
 	public String getBookPhoto() {
 		return bookPhoto;
@@ -46,6 +53,12 @@ public class TblCart {
 	public void setBookAuthor(String bookAuthor) {
 		this.bookAuthor = bookAuthor;
 	}
+	public String getBookPrice() {
+		return bookPrice;
+	}
+	public void setBookPrice(String bookPrice) {
+		this.bookPrice = bookPrice;
+	}
 	public String getReaderXame() {
 		return readerXame;
 	}
@@ -58,11 +71,11 @@ public class TblCart {
 	public void setReaderPhoto(String readerPhoto) {
 		this.readerPhoto = readerPhoto;
 	}
-	public String getReaderAddres() {
-		return readerAddres;
+	public String getBookNumber() {
+		return bookNumber;
 	}
-	public void setReaderAddres(String readerAddres) {
-		this.readerAddres = readerAddres;
+	public void setBookNumber(String bookNumber) {
+		this.bookNumber = bookNumber;
 	}
 	public String getCartType() {
 		return cartType;
@@ -72,6 +85,4 @@ public class TblCart {
 	}
 	
 	
-	
-
 }

@@ -88,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="logins.do">退出</a>
 			</div>
 			<div class="header-right">
-				<a class="account" href="">${auser.readerXame }</a>
+				<%-- <a class="account" href="" >${auser.readerXame }</a> --%><input style="border: 0px;outline:none;cursor: pointer;color:rgb(253,253,253);height:1px;width:1px;" type="submit" value="${auser.readerXame }"/>
 			</div>
 			<div class="header-right" id="dy1">
 				 <a  href="myinfo.action"> <img style="height:60px;width:60px;border-radius:50%;" src="${auser.readerPhoto }"></a>
@@ -196,7 +196,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="fuwu.action#parentVerticalTab10">
+						<a href="fuwu1.action#parentVerticalTab10">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-shield"></i></div>

@@ -10,11 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.yc.bean.TblBook;
+import com.yc.bean.TblCart;
 import com.yc.dao.TblBookDao;
+import com.yc.dao.TblCartDao;
 
 @Controller
 @EnableAutoConfiguration
@@ -22,6 +25,8 @@ public class TblIndexController {
 
 	@Resource
 	TblBookDao dao;
+	@Resource
+	TblCartDao dao1;
 
 	//后台主页面(管理员)
 	@RequestMapping("/book.action")
@@ -85,13 +90,68 @@ public class TblIndexController {
 		return "goumai";
 	}
 
+
+	//跳转页面
+	@RequestMapping("/fuwu1.action")
+	String fuwu1(Model m,HttpServletRequest request){		
+		m.addAttribute("list", dao.findAll());			
+		List<TblBook> book = dao.findBybookType("服务");		
+		m.addAttribute("book", book);
+		return "fuwu";		
+	}
+
+	//书城主页面-查询
+	@RequestMapping("/fuwu.action")
+	String fuwu(Model m,HttpServletRequest request){			
+
+		m.addAttribute("list", dao.findAll());	
+		//界面取值
+		String bid = request.getParameter("bid");
+		System.out.println("aaaa"+bid);
+
+		List<TblCart> book = dao1.findBybookId(bid);		
+		m.addAttribute("book", book);
+
+		return "gouwuche";		
+	}
+
+	//书城主页面-存储
+	@RequestMapping("/fuwu3.action")
+	String fuwu3(String bbid,String bbne,String bbar,String bbpo,String bbpe,String brxe,String brpo,String bbnr,Model m,HttpServletRequest request){			
+		
+		//界面取值
+		Integer aid = null;
+		String ct = "未付款";
+		
+		
+		TblCart tblcart = new TblCart();
+		tblcart.setAid(aid);
+		tblcart.setBookId(bbid);
+		tblcart.setBookName(bbne);
+		tblcart.setBookAuthor(bbar);
+		tblcart.setBookPhoto(bbpo);
+		tblcart.setBookAuthor(bbpe);
+		tblcart.setReaderXame(brxe);
+		tblcart.setReaderPhoto(brpo);
+		tblcart.setBookNumber(bbnr);
+		tblcart.setCartType(ct);
+		dao1.save(tblcart);
+		
+		
+		
+		return "redirect:/fuwu1.action"; 	
+	}
+
+
+
+
 	//书城主页面-手机
 	@RequestMapping("/shouji.action")
 	String shouji(Model m){
 		m.addAttribute("list", dao.findAll());
 		List<TblBook> book = dao.findBybookType("手机");
 		m.addAttribute("book", book);
-			return "shouji";			
+		return "shouji";			
 	}
 
 	//书城主页面-汽车
@@ -166,27 +226,8 @@ public class TblIndexController {
 		return "youxi";		
 	}
 
-	//书城主页面-服务
-	@RequestMapping("/fuwu.action")
-	String fuwu(Model m,HttpServletRequest request){			
-		m.addAttribute("list", dao.findAll());			
-		List<TblBook> book = dao.findBybookType("服务");		
-		m.addAttribute("book", book);
-
-		//界面取值
-		String book_photo = request.getParameter("bookphoto"); 
-		String book_name = request.getParameter("bookname");
-		String book_author = request.getParameter("bookauthor");
-		String book_price = request.getParameter("bookprice"); 
-		String reader_xame = request.getParameter("readerxame");
-		String reader_addres = request.getParameter("readeraddres");
-		String cart_type = request.getParameter("carttype");
-		//实例化
-		
 
 
-		return "fuwu";		
-	}
 
 	//书城主页面-职场
 	@RequestMapping("/zhichang.action")
