@@ -105,8 +105,20 @@ $(function(){
 			 return false;
 		 }else{
 			 alert("付款成功");
-			 
-			 window.location.href='gouwuche.action';
+		 }
+	 });
+});
+
+
+$(function(){
+	 $("#sub20").click(function(){
+		  var same=$("input[name='same']").val(); 
+		 if(same == ""){
+			 window.location.href='index';
+			 var same=$("input[name='same']").val(); 
+			 return false;
+		 }else{
+			 window.location.href='index_a';
 		 }
 	 });
 });
@@ -117,7 +129,12 @@ $(function(){
 <div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index_a"><span>Book</span>Store</a>
+				<form  method="post" id="sub20">
+					<a><span>Book<input style="border: 0px;outline:none;cursor: pointer;color:rgb(253,253,253);height:1px;width:1px;"  value="${auser.readerXame }" name="same"/> Store</span></a>
+				</form>
+			</div>
+			<div class="header-right" >
+				 <input  name="hame" value="${auser.readerXame }" type="hidden"/> 
 			</div>
 		</div>
 	</div>
@@ -172,9 +189,9 @@ $(function(){
 									</li> 
 							</ul>
 							</c:forEach>
-							<div class="header-right">
+							<div class="header-right" >
 							<c:forEach items="${book }" var="u">	
-								<form action="index_a" method="post">
+								<form action="" method="post">
 									<a class="account" id="sub4" type="submit">点击付款</a><input value="总金额：￥：${u.bookPrice }" disabled="disabled" style="color:red;margin-top:20px;height:33px;width:160px;"/>
 								</form>
 							</c:forEach>

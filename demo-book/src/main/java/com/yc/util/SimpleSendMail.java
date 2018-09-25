@@ -134,16 +134,7 @@ public class SimpleSendMail {
 			throw new RuntimeException("[" + props.getProperty("sender") + "]发送给" + Arrays.toString(recipient) + "的邮件失败...", e);
 		}
 	}
-	//////
-	/*	public static void main(String[] args) {
 
-	    	SimpleSendMail s = new SimpleSendMail(); 
-	    	                //参数为：收件人的邮箱地址 
-	    	s.send("大家", "？？？","oihia9001@163.com") ;
-	    	System.out.println(s.send("大家", "？？？","oihia9001@163.com"));
-	    	} 
-
-	 */
 	public   String random(){
 		Random random = new Random();
 		String result="";

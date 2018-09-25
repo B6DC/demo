@@ -53,7 +53,21 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red"></span>类型：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="格式：游戏" id="author" name="book_type">
+				<input type="text" class="input-text" value="" placeholder="格式：游戏" id="author" name="book_type" list="itemlist">
+				<datalist id="itemlist">
+   					<option>手机</option>
+   					<option>电器</option>
+   					<option>汽车</option>
+   					<option>自行车</option>
+   					<option>家具</option>
+   					<option>宠物</option>
+   					<option>时尚</option>
+   					<option>游戏</option>
+   					<option>服务</option>
+   					<option>职场</option>
+   					<option>房地产</option>
+   					<option>文学</option>
+				</datalist> 
 			</div>
 		</div>
 		<div class="row cl">
@@ -71,13 +85,13 @@
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">价格：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="格式：10(0-10000)" id="keywords" name="book_price">
+				<input type="text" class="input-text" value="" placeholder="格式：10(0-10000)" id="keywords" name="book_price" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2">库存：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" value="" placeholder="格式：10(0-1000)" id="keywords" name="book_amount">
+				<input type="text" class="input-text" value="" placeholder="格式：10(0-1000)" id="keywords" name="book_amount" onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');">
 			</div>
 		</div>
 		<div class="row cl">

@@ -22,8 +22,14 @@ public class TblOrders {
 	private String buyDate;
 	private String orderAddres;
 	private Integer bookNumber;
+	private String cartType;
 	
-	
+	public String getCartType() {
+		return cartType;
+	}
+	public void setCartType(String cartType) {
+		this.cartType = cartType;
+	}
 	public String getBookPrice() {
 		return bookPrice;
 	}

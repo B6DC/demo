@@ -96,13 +96,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<form id="filldetails" action="forget.do" method="post"
 			           enctype="multipart/form-data">
 			            <div><font color="red">${msg}</font></div>
+			            <hr>
 					  <div class="field name-box">
-							<input type="text" id="name" name="name" placeholder="您要修改密码的账号"  value="${yzname}"/>
+							<input type="text" id="name" name="name" placeholder="您要修改密码的账号(英文自动转为大写)"  value="${yzname}"/>
 							<label for="name">账号</label>
 							<span class="ss-icon">check</span>
 					  </div>
 					  <div class="field email-box">
-							<input type="text" id="email" name="email" placeholder="请输入您注册的邮箱" value="${yzemail}"/>
+							<input type="text" id="email" name="email" placeholder="请输入您注册的邮箱(英文自动转为大写)" value="${yzemail}"/>
 							<label for="email">邮箱</label>
 							<span class="ss-icon">check</span>
 					  </div>

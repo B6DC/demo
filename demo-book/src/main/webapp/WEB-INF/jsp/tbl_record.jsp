@@ -37,6 +37,7 @@
 					<th width="70">书籍编号</th>
 					<th width="120">书籍名</th>
 					<th width="100">退书日期</th>
+					<th width="300">退书地址</th>
 					<th width="100">操作</th>
 				</tr>
 			</thead>
@@ -45,11 +46,12 @@
 				<tr class="text-c">
 					
 					<td>${u.tid}</td>
-					<td>${u.bookPhoto}</td>
+					<td><img style="width:30px;height:30px;" src="${u.bookPhoto}"></td>
 					<td>${u.readerXame}</td>
 					<td>${u.bookId}</td>
 					<td>${u.bookName}</td>
 					<td>${u.backDate}</td>
+					<td>${u.recordAddres}</td>
 					<td class="f-14 product-brand-managei" class="Hui-iconfont"><a style="text-decoration:none" class="ml-5" onClick="article_del(${u.tid})" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 			</c:forEach>

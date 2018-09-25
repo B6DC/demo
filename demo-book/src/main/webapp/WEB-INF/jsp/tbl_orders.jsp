@@ -38,6 +38,7 @@
 					<th width="140">购买日期</th>
 					<th width="200">购买地址</th>
 					<th width="60">购买数量</th>
+					<th width="60">付款情况</th>
 					<th width="80">操作</th>
 				</tr>
 			</thead>
@@ -45,13 +46,14 @@
 			<c:forEach items="${list }" var="u">
 				<tr class="text-c">
 					<td>${u.oid}</td>
-					<td>${u.bookPhoto}</td>
+					<td><img style="width:30px;height:30px;" src="${u.bookPhoto}"></td>
 					<td>${u.readerXame}</td>
 					<td>${u.bookId}</td>
 					<td>${u.bookName}</td>
 					<td>${u.buyDate}</td>
-					<td>${u.readerAddres}</td>
+					<td>${u.orderAddres}</td>
 					<td>${u.bookNumber}</td>
+					<td>${u.cartType}</td>
 					<td class="td-manage">
 					<a style="text-decoration:none" class="ml-5" onClick="picture_edit('订单修改','tbl_orders-add.html','10001')" href="javascript:;" title="修改"><i class="Hui-iconfont">&#xe6df;</i></a> 
 					<a style="text-decoration:none" class="ml-5" onClick="picture_del(${u.oid})" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>

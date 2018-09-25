@@ -70,8 +70,8 @@
 					<td>${u.bookPubname}</td>
 					<td><fmt:formatDate value="${u.bookTime}" pattern="yyyy-MM-dd"/></td>
 					<td>${u.bookPrice}</td>
-					<td>${u.bookAmount}</td>                                                                                                                                                                                                       
-					<td>${u.bookPhoto}</td>
+					<td>${u.bookAmount}</td>  
+					<td><img style="width:30px;height:30px;" src="${u.bookPhoto}"></td>                                                                                                                                                                                                     
 					<td><a style="text-decoration:none" class="ml-5" href="javascript:void(0)" onClick="undate('${u.bid}','${u.bookId}','${u.bookName}','${u.bookType}','${u.bookAuthor}','${u.bookPubname}',
 	        	      '<fmt:formatDate value="${u.bookTime}" pattern="yyyy-MM-dd"/>','${u.bookPrice}',
 	        	      '${u.bookAmount}','${u.bookPhoto}');"><i class="Hui-iconfont">&#xe6df;</i></a></td>

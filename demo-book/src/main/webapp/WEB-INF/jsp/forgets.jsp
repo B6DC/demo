@@ -43,6 +43,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       maxOptions: 1
     });
   });
+  
+  $(function(){
+	 	 $("#sub").click(function(){
+	 		 var pwd=$("input[name='pwd']").val();
+	 		 var cpwd=$("input[name='pwds']").val();
+	 	
+	 		//密码   阻止表单提交
+	 		if(pwd == ""){
+				 alert("密码不能为空!");
+				 $("input[name='pwd']").val("");
+			 		return false;
+			 }else if(cpwd == ""){
+				 alert("确认密码不能为空!");
+				 $("input[name='pwds']").val("");
+			 		return false;
+			 }else if(pwd!=cpwd){
+	 			 alert("两次密码输入不一致");
+	 			 $("input[name='pwd']").val("");
+	 			 $("input[name='pwds']").val("");
+	 		 		return false;
+	 		 }
+	 		
+			 
+	 	 });
+	  }); 
+  
+  
+  
 </script>
 <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 <link href="css/jquery.uls.css" rel="stylesheet"/>

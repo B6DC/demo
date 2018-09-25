@@ -37,7 +37,6 @@
 					<th width="120">书籍封面</th>
 					<th width="60">书号</th>
 					<th width="100">书名</th>
-					<th width="60">作者</th>
 					<th>留言内容</th>
 					<th width="80">发表时间</th>
 					<th width="100">操作</th>
@@ -48,12 +47,11 @@
 				<tr class="text-c">
 					
 					<td>${u.cid }</td>
-					<td><i class="avatar size-L radius">${u.readerPhoto }</i></td>
+					<td><img style="width:30px;height:30px;" src="${u.readerPhoto }"></td>
 					<td>${u.readerXame }</td>
-					<td><i class="avatar size-L radius">${u.bookPhoto }</i></td>
+					<td><img style="width:30px;height:30px;" src="${u.bookPhoto }"></td>
 					<td>${u.bookId }</td>
 					<td>${u.bookName }</td>
-					<td>${u.bookAuthor }</td>
 					<td class="text-l">
 						<div>${u.bookContent }</div>
 					</td>

@@ -54,7 +54,7 @@
 				<td>${u.readerPassword}</td>
 				<td>${u.readerXame}</td>
 				<td>${u.readerSex}</td>
-				<td>${u.readerPhoto}</td>
+				<td><img style="width:30px;height:30px;" src="${u.readerPhoto}"></td>
 				<td>${u.readerPhone}</td>
 				<td>${u.readerEmail}</td>
 				<td>${u.readerMoney}</td>
