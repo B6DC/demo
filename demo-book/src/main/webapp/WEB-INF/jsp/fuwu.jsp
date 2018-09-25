@@ -154,14 +154,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<c:forEach items="${book }" var="u">	
 							<input value="${u.bookId }" name="bid" type="hidden"/>	
 						</c:forEach>
-						<!-- &nbsp;&nbsp;&nbsp;&nbsp;<a class="button" type="submit" >购物车</a> -->
-						&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit">购物车</button>
+						&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" style="height:30px;width:60px;margin-top:10px;border:2px #9999ff dashed;">购物车</button>
 					</form>
 			
-				<!-- &nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="gouwuche.action" >购物车</a> -->
 			</div>
 			<div class="header-right" >
-				 <input  name="hame" value="${auser.readerXame }" style="border: 0px;outline:none;cursor: pointer;height:40px;width:50px;color:rgb(253,253,253);margin-top:15px;"/> 
+				 <input  name="hame" value="${auser.readerXame }" type="hidden"/> 
 			</div>
 
 			<div class="header-right" id="dy2" style="height:60px;width:60px;border-radius:50%;">

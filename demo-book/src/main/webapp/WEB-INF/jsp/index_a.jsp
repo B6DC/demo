@@ -88,10 +88,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="logins.do">退出</a>
 			</div>
 			<div class="header-right">
-				<%-- <a class="account" href="" >${auser.readerXame }</a> --%><input style="border: 0px;outline:none;cursor: pointer;color:rgb(253,253,253);height:1px;width:1px;" type="submit" value="${auser.readerXame }"/>
+				 <a  href="myinfo.action"> <input style="height:33px;width:60px;border:2px #9999ff dashed;margin-top:20px" type="submit" value="${auser.readerXame }"/></a>
 			</div>
 			<div class="header-right" id="dy1">
-				 <a  href="myinfo.action"> <img style="height:60px;width:60px;border-radius:50%;" src="${auser.readerPhoto }"></a>
+				 <img style="height:60px;width:60px;border-radius:50%;" src="${auser.readerPhoto }">
 			</div>
 		</div>
 	</div>

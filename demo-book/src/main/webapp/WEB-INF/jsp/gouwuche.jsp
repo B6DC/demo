@@ -157,14 +157,14 @@ $(function(){
 							<c:forEach items="${book }" var="u">	
 							<ul class="list">
 									<li>
-									<a href="">
+									
 									<img src="${u.bookPhoto }" title="" alt="" />
 									<section class="list-left">
 									<h5 class="title">${u.bookName}</h5>
 									<span class="adprice">￥${u.bookPrice}</span>
 									<p class="catpath">${u.bookAuthor }</p>
 									</section>
-									</a>
+									
 									<div class="header-right">
 										<a class="account" href="#">${u.cartType }</a>
 									</div>
@@ -173,9 +173,11 @@ $(function(){
 							</ul>
 							</c:forEach>
 							<div class="header-right">
+							<c:forEach items="${book }" var="u">	
 								<form action="index_a" method="post">
-									<a class="account" id="sub4" type="submit">点击付款</a><input value="总金额：￥:${u.bookPrice }" disabled="disabled" style="color:red;margin-top:20px;height:33px;width:150px;"/>
+									<a class="account" id="sub4" type="submit">点击付款</a><input value="总金额：￥：${u.bookPrice }" disabled="disabled" style="color:red;margin-top:20px;height:33px;width:160px;"/>
 								</form>
+							</c:forEach>
 							</div>
 							</div>
 							</div>

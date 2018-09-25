@@ -43,6 +43,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       maxOptions: 1
     });
   });
+  
+  
+  $(function(){
+		 $("#sub8").click(function(){
+			  var same=$("input[name='same']").val(); 
+			 if(same == ""){
+				 window.location.href='index';
+				 var same=$("input[name='same']").val(); 
+				 return false;
+			 }else{
+				 window.location.href='index_a';
+			 }
+		 });
+	});
+  
+  
 </script>
 <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 <link href="css/jquery.uls.css" rel="stylesheet"/>
@@ -72,8 +88,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <div class="header">
 		<div class="container">
-			<div class="logo">
-				<a href="index"><span>Book Store</span></a>
+			<div class="logo" id="sub8">
+				<form  method="post">
+					<a><span>Book<input style="border: 0px;outline:none;cursor: pointer;color:rgb(253,253,253);height:1px;width:1px;"  value="${auser.readerXame }" name="same"/> Store</span></a>
+				</form>
 			</div>
 			<div class="header-right">
 				<a class="account" href="gouwuche.action">购物车</a>

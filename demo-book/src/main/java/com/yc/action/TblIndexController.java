@@ -107,8 +107,6 @@ public class TblIndexController {
 		m.addAttribute("list", dao.findAll());	
 		//界面取值
 		String bid = request.getParameter("bid");
-		System.out.println("aaaa"+bid);
-
 		List<TblCart> book = dao1.findBybookId(bid);		
 		m.addAttribute("book", book);
 
@@ -120,7 +118,7 @@ public class TblIndexController {
 	String fuwu3(String bbid,String bbne,String bbar,String bbpo,String bbpe,String brxe,String brpo,String bbnr,Model m,HttpServletRequest request){			
 		
 		//界面取值
-		Integer aid = null;
+		Integer aid = 1;
 		String ct = "未付款";
 		
 		
@@ -130,14 +128,12 @@ public class TblIndexController {
 		tblcart.setBookName(bbne);
 		tblcart.setBookAuthor(bbar);
 		tblcart.setBookPhoto(bbpo);
-		tblcart.setBookAuthor(bbpe);
+		tblcart.setBookPrice(bbpe);
 		tblcart.setReaderXame(brxe);
 		tblcart.setReaderPhoto(brpo);
 		tblcart.setBookNumber(bbnr);
 		tblcart.setCartType(ct);
 		dao1.save(tblcart);
-		
-		
 		
 		return "redirect:/fuwu1.action"; 	
 	}

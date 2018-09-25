@@ -82,9 +82,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-right">
 				<a class="account" href="gouwuche.action">购物车</a>
 			</div>
-			<div class="header-right">
-				<a class="account" href="#">${auser.readerXame }</a>
-			</div>
 			<div class="header-right" >
 				 <a  href="myinfo.action"> <img style="height:60px;width:60px;border:2px solid #99D3F5;border-radius:50%;" src="${auser.readerPhoto }"></a>
 			</div>

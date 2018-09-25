@@ -21,7 +21,6 @@ public class TblComment {
 	private String bookId;
 	private String bookPhoto;
 	private String bookName;
-	private String bookAuthor;
 	private String bookContent;
 	private Date publishtime;
 	
@@ -60,12 +59,6 @@ public class TblComment {
 	}
 	public void setBookName(String bookName) {
 		this.bookName = bookName;
-	}
-	public String getBookAuthor() {
-		return bookAuthor;
-	}
-	public void setBookAuthor(String bookAuthor) {
-		this.bookAuthor = bookAuthor;
 	}
 	public String getBookContent() {
 		return bookContent;
