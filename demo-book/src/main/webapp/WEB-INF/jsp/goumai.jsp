@@ -75,9 +75,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="logo">
 				<a href="index_a"><span>Book Store</span></a>
 			</div>
-			<div class="header-right">
-				<a class="account" href="gouwuche.action">购物车</a>
-			</div>
+			
+			
+			
 		</div>
 	</div>
 			<div class="select-box">
@@ -87,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
 			  <li><a href="index">主页</a></li>
-			  <li><a href="goumai.action">购买</a></li>
+			  <li><a href="goumai.action">购买记录</a></li>
 			</ol>
 			<div class="ads-grid">
 				<div class="ads-display col-md-9">
@@ -96,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
 						<li role="presentation" class="active">
 						  <a href="goumai.action" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
-							<span class="text">购买</span>
+							<span class="text">购买记录</span>
 						  </a>
 						</li>
 					  </ul>
@@ -108,21 +108,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<c:forEach items="${book }" var="u">		
 							<ul class="list">
 									<li>
-									<a href="single.html">
-									<img src="images/fa1.jpg" title="" alt="" />
-									<section class="list-left">
-									<h5 class="title" style="color:orange;"></h5>
-									<span class="adprice"></span>
-									<p class="catpath"></p>
-									</section>
-									</a>
-								<div class="header-right">
-									<a class="account" href="login">购买</a>
-								</div>
-								<div class="header-right">
-									<a class="account" href="login.">加入购物车</a>
-								</div>
-									<div class="clearfix"></div>
+										<img src="${u.bookPhoto }" title="" alt="" />
+										<section class="list-left">
+										<h5 class="title">${u.bookName}</h5>
+										<span class="adprice">￥${u.bookPrice}</span>
+										</section>
+										<div class="header-right">
+											<a class="account" href="#">${u.cartType }</a>
+										</div>
+										<div class="clearfix"></div>
 									</li> 	
 							</ul>	
 							</c:forEach>	

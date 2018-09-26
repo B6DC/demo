@@ -25,12 +25,22 @@
 </head>
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户中心 <span class="c-gray en">&gt;</span> 用户管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<form method="post">
 <div class="page-container">
 	<div class="text-c"> 
 		<input type="text" class="input-text" style="width:250px" placeholder="输入用户昵称" id="" name="">
 		<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
 	</div>
 	<div class="mt-20">
+	 <input type="hidden" name="readerId">
+		<input type="hidden" name="readerName">
+		<input type="hidden" name="readerPassword">
+		<input type="hidden" name="readerXame" >
+		<input type="hidden" name="readerSex">
+		<input type="hidden" name="readerPhoto">
+		<input type="hidden" name="readerPhone">
+		<input type="hidden" name="readerEmail">
+		<input type="hidden" name="readerMoney">
 	<table class="table table-border table-bordered table-hover table-bg table-sort">
 		<thead>
 			<tr class="text-c">
@@ -58,8 +68,7 @@
 				<td>${u.readerPhone}</td>
 				<td>${u.readerEmail}</td>
 				<td>${u.readerMoney}</td>
-				<td class="td-manage"><a title="编辑" href="javascript:;" onclick="member_edit('编辑','tbl_reader-add.html','4','','510')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> 
-				<a style="text-decoration:none" class="ml-5" onClick="change_password('修改密码','tbl_reader-password.html','10001','600','270')" href="javascript:;" title="修改密码"><i class="Hui-iconfont">&#xe63f;</i></a>
+				<td class="td-manage"><a title="编辑" href="javascript:void(0)"  class="ml-5" style="text-decoration:none" onClick="undate('44','55','${u.readerId}','${u.readerName}','${u.readerPassword}','${u.readerXame}','${u.readerSex}','${u.readerPhoto}','${u.readerPhone}','${u.readerEmail}','${u.readerMoney}');"><i class="Hui-iconfont">&#xe6df;</i></a>				
 				<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 			</tr>
 		</c:forEach>
@@ -67,6 +76,7 @@
 	</table>
 	</div>
 </div>
+</form>
 <!--_footer 作为公共模版分离出去-->
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
 <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
@@ -118,6 +128,29 @@ function member_del(obj,id){
 		});		
 	});
 }
+
+
+function undate(readeroid,readerdid,readerid,readername,readerpassword,readerxame,readersex,readerphoto,readerphone,readeremail,readermoney){
+	document.forms[0].elements[0].value = readeroid;
+	document.forms[0].elements[1].value = readerdid;
+	document.forms[0].elements[2].value = readerid;
+	document.forms[0].elements[3].value = readername;
+	document.forms[0].elements[4].value = readerpassword;
+	document.forms[0].elements[5].value = readerxame;
+	document.forms[0].elements[6].value = readersex;
+	document.forms[0].elements[7].value = readerphoto;
+	document.forms[0].elements[8].value = readerphone;
+	document.forms[0].elements[9].value = readeremail;
+	document.forms[0].elements[10].value = readermoney;
+	
+
+	
+	document.forms[0].action = '<c:url value="tbl-reader-add.action"/>';
+	
+	document.forms[0].submit();
+	
+}
+
 </script> 
 </body>
 </html>

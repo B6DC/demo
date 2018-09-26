@@ -1,6 +1,8 @@
 package com.yc.action;
 
 import java.io.Writer;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -16,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.yc.bean.TblBook;
 import com.yc.bean.TblCart;
+import com.yc.bean.TblOrders;
 import com.yc.dao.TblBookDao;
 import com.yc.dao.TblCartDao;
+import com.yc.dao.TblOrdersDao;
 
 @Controller
 @EnableAutoConfiguration
@@ -27,6 +31,8 @@ public class TblIndexController {
 	TblBookDao dao;
 	@Resource
 	TblCartDao dao1;
+	@Resource
+	TblOrdersDao dao2;
 
 	//后台主页面(管理员)
 	@RequestMapping("/book.action")
@@ -75,20 +81,8 @@ public class TblIndexController {
 		return "index_a";
 	}
 
-	//购物车
-	@RequestMapping("/gouwuche.action")
-	String gouwuche(Model model,HttpServletRequest request){
 
 
-		return "gouwuche";
-	}
-
-	//购买(付款)
-	@RequestMapping("/goumai.action")
-	String goumai(Model m){
-
-		return "goumai";
-	}
 
 
 	//跳转页面
@@ -113,15 +107,15 @@ public class TblIndexController {
 		return "gouwuche";		
 	}
 
-	//书城主页面-存储
+	//书城主页面-存储到购物车表
 	@RequestMapping("/fuwu3.action")
-	String fuwu3(String bbid,String bbne,String bbar,String bbpo,String bbpe,String brxe,String brpo,String bbnr,Model m,HttpServletRequest request){			
-		
+	String fuwu3(String bbid,String bbne,String bbar,String bbpo,String bbpe,String brxe,String brpo,Model m,HttpServletRequest request){			
+
 		//界面取值
-		Integer aid = 1;
+		Integer aid = null;
 		String ct = "未付款";
-		
-		
+		Integer bbnr= 1;
+
 		TblCart tblcart = new TblCart();
 		tblcart.setAid(aid);
 		tblcart.setBookId(bbid);
@@ -134,8 +128,65 @@ public class TblIndexController {
 		tblcart.setBookNumber(bbnr);
 		tblcart.setCartType(ct);
 		dao1.save(tblcart);
-		
+
 		return "redirect:/fuwu1.action"; 	
+	}
+
+	//购买(付款)
+	@RequestMapping("/goumai.action")
+	String goumai(String qbd, Model m,HttpServletRequest request){	
+		
+
+		return "goumai";
+	}
+
+	//书城主页面-查询
+	@RequestMapping("/fukuan.action")
+	@Transactional
+	String fukuan(String bqd,String qbd, Model m,HttpServletRequest request) throws InterruptedException{			
+
+
+
+		System.out.println("y"+qbd);
+		List<TblOrders> orders = dao2.findByBookId(qbd);
+
+		System.out.println("z"+orders);
+		m.addAttribute("book", orders);
+		//界面取值
+		//String bqd = request.getParameter("bqd");
+		Integer qd1=Integer.parseInt(bqd);
+		System.out.println("x"+qd1);
+
+		dao1.delete(qd1);
+
+		return  "goumai";
+	}
+
+	//书城主页面-存储到订单表
+	@RequestMapping("/dizhi.action")
+	String dizhi(String bbid,String bbne,String bbpo,String bbpe,String bbre,String brxe,String bbar, Model m,HttpServletRequest request){			
+
+		//界面取值
+		Integer oid = null;
+		String ct = "已付款";
+		Date bbde =new Date();
+		Integer bbnr = 1;
+
+		TblOrders tblorders = new TblOrders();
+		tblorders.setOid(oid);
+		tblorders.setBookId(bbid);
+		tblorders.setBookName(bbne);
+		tblorders.setBookPhoto(bbpo);
+		tblorders.setBookPrice(bbpe);
+		tblorders.setBuyDate(bbde);
+		tblorders.setReaderXame(brxe);
+		tblorders.setOrderAddres(bbar);
+		tblorders.setCartType(ct);
+		tblorders.setBookNumber(bbnr);
+		dao2.save(tblorders);
+
+
+		return "index_a";
 	}
 
 

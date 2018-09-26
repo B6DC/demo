@@ -21,7 +21,7 @@ public class TblCart {
 	private String bookPrice;
 	private String readerXame;
 	private String readerPhoto;
-	private String bookNumber;
+	private Integer bookNumber;
 	private String cartType;
 	public Integer getAid() {
 		return aid;
@@ -71,10 +71,11 @@ public class TblCart {
 	public void setReaderPhoto(String readerPhoto) {
 		this.readerPhoto = readerPhoto;
 	}
-	public String getBookNumber() {
+	
+	public Integer getBookNumber() {
 		return bookNumber;
 	}
-	public void setBookNumber(String bookNumber) {
+	public void setBookNumber(Integer bookNumber) {
 		this.bookNumber = bookNumber;
 	}
 	public String getCartType() {

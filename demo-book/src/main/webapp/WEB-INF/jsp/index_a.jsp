@@ -79,22 +79,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </style>
 </head>
 <body>
+<form action="findmyinfo.action" method = "post">
 	<div class="header">
+	<input name="xame" value="${auser.readerXame }" type="hidden">
+	
 		<div class="container">
 			<div class="logo">
 				<a href="index_a"><span>Book Store</span></a>
 			</div>
 			<div class="header-right">
-				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="logins.do">退出</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;<a class="account" href="index">退出</a>
 			</div>
 			<div class="header-right">
-				 <a  href="myinfo.action"> <input style="height:33px;width:60px;border:2px #9999ff dashed;margin-top:20px" type="submit" value="${auser.readerXame }"/></a>
+				  <input style="height:33px;width:60px;border:2px #9999ff dashed;margin-top:20px" type="submit" value="${auser.readerXame }"/>
 			</div>
 			<div class="header-right" id="dy1">
-				 <img style="height:60px;width:60px;border-radius:50%;" src="${auser.readerPhoto }">
+				 <img style="height:80px;width:80px;border-radius:50%;" src="${auser.readerPhoto }">
 			</div>
 		</div>
 	</div>
+</form>
 	<div class="main-banner banner text-center">
 	  <div class="container">    
 			

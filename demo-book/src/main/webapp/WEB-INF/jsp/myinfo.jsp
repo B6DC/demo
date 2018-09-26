@@ -43,6 +43,48 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       maxOptions: 1
     });
   });
+  
+  $(function(){
+	 	 $("#sub25").click(function(){
+	 		 var pwd=$("input[name='password']").val();
+	 		 var email=$("input[name='email']").val();
+	 		 var phone=$("input[name='phone']").val();
+	 		 var money=$("input[name='money']").val();
+	 		 var photo=$("input[name='photo']").val();
+	 		 var reg =/^[\d_a-zA-Z]\w*\.?\w+@[\d_a-zA-Z]{2,}\.[a-zA-Z]{2,4}$/;
+	 		 var reg1 =/1[3-9]\d{9}$/;
+	 		//邮箱
+	 		 if(email == ""){
+	 			 alert("邮箱不能为空!");
+	 			 $("input[name='email']").val("");
+	 		 		return false;
+	 		 }else if(!reg.test(email)){
+	 			 alert("邮箱格式不正确！");
+	 			 $("input[name='email']").val("");
+	 			 return false;
+	 		 }
+	 		//电话
+	 		 if(phone == ""){
+	 			 alert("手机号不能为空!");
+	 			 $("input[name='phone']").val("");
+	 		 		return false;
+	 		 }else if(!reg1.test(phone)){
+	 			 alert("手机号格式不正确!");
+	 			 $("input[name='phone']").val("");
+	 		 		return false;
+	 		 }
+	 		//密码   阻止表单提交
+	 		if(pwd == ""){
+				 alert("密码不能为空!");
+				 $("input[name='pwd']").val("");
+			 		return false;
+			 }
+	 	 });
+	  }); 
+  
+  
+  
+  
 </script>
 <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 <link href="css/jquery.uls.css" rel="stylesheet"/>
@@ -73,6 +115,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			opacity:0;}
 		</style>
 </head>
+
 <body>
 <div class="header">
 		<div class="container">
@@ -80,10 +123,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="index_a"><span>Book</span>Store</a>
 			</div>
 			<div class="header-right">
-				<a class="account" href="gouwuche.action">购物车</a>
+				<a class="account" href="index_a">返回</a>
+			</div>
+			<div class="header-right">
+				  <input style="height:33px;width:60px;border:2px #9999ff dashed;margin-top:20px" type="submit" value="${auser.readerXame }"/>
 			</div>
 			<div class="header-right" >
-				 <a  href="myinfo.action"> <img style="height:60px;width:60px;border:2px solid #99D3F5;border-radius:50%;" src="${auser.readerPhoto }"></a>
+				 <a  href="#"> <img style="height:80px;width:80px;border:2px solid #99D3F5;border-radius:50%;" src="${auser.readerPhoto }"></a>
 			</div>
 		</div>
 	</div>
@@ -94,18 +140,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="feedback main-grid-border">
 		<div class="container">
 			<h2 class="head">个人信息</h2>
+			
 			<div class="feed-back">
-				<div class="feed-back-form">
-					<form>
-					<span>用户详情</span>
-							<input type="text" value="昵称" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '昵称';}">
-							<input type="text" value="性别" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '性别';}">
-							<input type="text" value="邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '邮箱';}">
-							<input type="text" value="电话" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '电话';}">
-							<input type="text" value="地址" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '地址';}">
-							<input type="text" value="余额" disabled="disabled">
-							<a><input type="submit" value="点击确认修改"></a>
-						</form>
+				<div class="feed-back-form">					
+					<c:forEach items="${reader }" var="r">	
+					
+					<span>账号：${r.readerName }</span>
+					<form method = "post" action="update4.action"   enctype="multipart/form-data">
+					<table>
+					 <tr><td>昵称:</td>
+					         <input name="name" type="hidden" value="${r.readerName }">
+						 <td><input name="xame" type="text" value="${r.readerXame }" style="height:40px;width:600px;margin-top:23px" disabled="disabled"></td>
+					 </tr>
+					 <tr><td>密码:</td>
+						 <td><input name="password" type="text" value="${r.readerPassword }" style="height:40px;width:600px;margin-top:23px"></td>
+					 </tr>
+					<tr><td>性别:</td>
+						 <td><input name="sex" type="text" value="${r.readerSex }" style="height:40px;width:600px;margin-top:23px">（注释：1为男，0为女）</td>
+					 </tr>
+					 <tr><td>邮箱:</td>
+						 <td><input  name="email" type="text" value="${r.readerEmail }" style="height:40px;width:600px;margin-top:23px"></td>
+					 </tr>
+					 <tr><td>手机:</td>
+						 <td><input  name="phone" type="text" value="${r.readerPhone }" style="height:40px;width:600px;margin-top:23px"></td>
+					 </tr>
+					<tr><td>余额:</td>
+						 <td><input name="money"  type="text" value="${r.readerMoney}" style="height:40px;width:600px;margin-top:23px" disabled="disabled"></td>
+					 </tr> 
+					</table>
+							<a><input type="submit" id="sub25" value="点击确认修改"></a>	
+							</form>	
+							</c:forEach>							
 				</div>
 			</div>
 		</div>	
@@ -132,5 +197,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		</footer>
         <!--footer section end-->
+
 </body>
 </html>

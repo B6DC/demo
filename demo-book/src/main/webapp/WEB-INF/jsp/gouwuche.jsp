@@ -98,13 +98,16 @@ var elem=$('#container ul');
 
 $(function(){
 	 $("#sub4").click(function(){
-		  var add=$("input[name='addres']").val(); 
+		  var add=$("input[name='bbar']").val(); 
 		 if(add == ""){
 			 alert("请先添加收货地址");
-			 var add=$("input[name='addres']").val(); 
+			 var add=$("input[name='bbar']").val(); 
 			 return false;
 		 }else{
+			 
 			 alert("付款成功");
+				
+			 
 		 }
 	 });
 });
@@ -123,6 +126,10 @@ $(function(){
 	 });
 });
 
+
+
+
+
 </script>
 </head>
 <body>
@@ -133,6 +140,17 @@ $(function(){
 					<a><span>Book<input style="border: 0px;outline:none;cursor: pointer;color:rgb(253,253,253);height:1px;width:1px;"  value="${auser.readerXame }" name="same"/> Store</span></a>
 				</form>
 			</div>
+			
+			<div class="header-right">
+					<form action="fukuan.action" method="post">
+						<c:forEach items="${book }" var="u">	
+							<input value="${u.aid }" name="bqd" type="hidden"/>
+							<input value="${u.bookId }" name="qbd" type="hidden"/>		
+						</c:forEach>
+							<button  type="submit" style="height:30px;width:90px;margin-top:10px;border:2px #9999ff dashed;">购买记录</button>
+					</form>
+			</div>
+			
 			<div class="header-right" >
 				 <input  name="hame" value="${auser.readerXame }" type="hidden"/> 
 			</div>
@@ -142,12 +160,11 @@ $(function(){
 	<!-- Electronic appliances -->
 	<div class="total-ads main-grid-border">
 		<div class="container">
-			<div class="select-box" style="text-align:center; vertical-align:middel;" >
-					<input name="addres" value="" placeholder="请添加收货地址" style="height:30px;width:350px;"/>
+			<div class="select-box">				
 				<div class="clearfix"></div>
 			</div>
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
-			  <li><a href="index_a">主页</a></li>
+			   <li><a href="index_a">主页</a></li>
 			   <li><a href="gouwuche.action">购物车</a></li>
 			</ol>
 			<div class="ads-grid">
@@ -190,11 +207,22 @@ $(function(){
 							</ul>
 							</c:forEach>
 							<div class="header-right" >
-							<c:forEach items="${book }" var="u">	
-								<form action="" method="post">
-									<a class="account" id="sub4" type="submit">点击付款</a><input value="总金额：￥：${u.bookPrice }" disabled="disabled" style="color:red;margin-top:20px;height:33px;width:160px;"/>
+								<form action="dizhi.action" method="post">
+										<c:forEach items="${book }" var="u">	
+											<input value="${u.bookId }" name="bbid" type="hidden"/>
+											<input value="${u.bookPhoto }" name="bbpo" type="hidden"/>
+											<input value="${u.bookName }" name="bbne" type="hidden"/>
+											<input value="${u.bookPrice }" name="bbpe" type="hidden"/>
+											<input value="${auser.readerXame }" name="brxe" type="hidden"/>
+										</c:forEach>
+										<input  placeholder="请添加收货地址" style="height:30px;width:350px;text-align:left;vertical-align:middel;" name="bbar"/>
+										<!-- <a class="account" id="sub4" type="submit" href="javascript:;">点击付款</a> -->
+										<input class="button" id="sub4" type="submit" value="点击付款" /> 
+										<c:forEach items="${book }" var="u">
+											<input value="总金额：￥：${u.bookPrice }" disabled="disabled" style="color:red;margin-top:20px;height:33px;width:160px;"/>		
+										</c:forEach>
 								</form>
-							</c:forEach>
+									
 							</div>
 							</div>
 							</div>

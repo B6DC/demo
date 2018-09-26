@@ -130,9 +130,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 });
 		});
 		 
-		 
-		 
-		 
 </script>
 
 
@@ -148,7 +145,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a><span>Book<input style="border: 0px;outline:none;cursor: pointer;color:rgb(253,253,253);height:1px;width:1px;"  value="${auser.readerXame }" name="same"/> Store</span></a>
 				</form>
 			</div>	
-		
 			<div class="header-right">
 					<form action="fuwu.action" method="post">
 						<c:forEach items="${book }" var="u">	
@@ -156,15 +152,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</c:forEach>
 						&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" style="height:30px;width:60px;margin-top:10px;border:2px #9999ff dashed;">购物车</button>
 					</form>
-			
 			</div>
 			<div class="header-right" >
 				 <input  name="hame" value="${auser.readerXame }" type="hidden"/> 
 			</div>
 
-			<div class="header-right" id="dy2" style="height:60px;width:60px;border-radius:50%;">
-				 <a  href="myinfo.action"> <img src="${auser.readerPhoto }"></a>
-			</div>
+			<%-- <div class="header-right" id="dy2" style="height:60px;width:60px;border-radius:50%;">
+				 <img src="${auser.readerPhoto }">
+			</div> --%>
 		</div>
 	</div>
 			<div class="select-box">

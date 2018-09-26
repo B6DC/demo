@@ -1,5 +1,7 @@
 package com.yc.bean;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +21,7 @@ public class TblOrders {
 	private String bookName;
 	private String bookPhoto;
 	private String bookPrice;
-	private String buyDate;
+	private Date buyDate;
 	private String orderAddres;
 	private Integer bookNumber;
 	private String cartType;
@@ -66,10 +68,11 @@ public class TblOrders {
 	public void setBookPhoto(String bookPhoto) {
 		this.bookPhoto = bookPhoto;
 	}
-	public String getBuyDate() {
+	
+	public Date getBuyDate() {
 		return buyDate;
 	}
-	public void setBuyDate(String buyDate) {
+	public void setBuyDate(Date buyDate) {
 		this.buyDate = buyDate;
 	}
 	public String getOrderAddres() {

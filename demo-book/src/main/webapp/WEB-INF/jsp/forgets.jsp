@@ -45,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   });
   
   $(function(){
-	 	 $("#sub").click(function(){
+	 	 $("#sub33").click(function(){
 	 		 var pwd=$("input[name='pwd']").val();
 	 		 var cpwd=$("input[name='pwds']").val();
 	 	
@@ -136,7 +136,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  </div>
 
 			<div>
-				<input class="button" type="submit" value="确认修改" />		
+				<input class="button" type="submit" id="sub33" value="确认修改" />		
 			</div>	
 		</form>	
 		<div class="clear"></div>
