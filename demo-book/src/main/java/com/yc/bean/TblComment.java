@@ -1,6 +1,8 @@
 package com.yc.bean;
 
-import java.sql.Date;
+
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity //实体类注解
 @Table(name="tbl_comment") //配置表名
@@ -22,6 +26,7 @@ public class TblComment {
 	private String bookPhoto;
 	private String bookName;
 	private String bookContent;
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss" ,timezone = "GTM+8")
 	private Date publishtime;
 	
 	public Integer getCid() {

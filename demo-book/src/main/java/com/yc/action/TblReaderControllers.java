@@ -42,6 +42,9 @@ public class TblReaderControllers {
 		if (tblReaderBiz.login(name, pwd)) {
 			TblReader auser = accountDao.findByReaderName(name);
 			session.setAttribute("auser", auser);
+			//存一个当前登录用户名
+			session.setAttribute("dqname", name);
+
 			System.out.println(auser.getReaderName());
 			System.out.println(auser.getReaderPhoto());
 			return "redirect:/index_a";

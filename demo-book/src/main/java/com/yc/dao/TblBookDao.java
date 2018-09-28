@@ -20,6 +20,7 @@ import com.yc.bean.TblBook;
 
 		List<TblBook> findBybookType(String string);
 		List<TblBook> findBybookId(String bid);
+		  TblBook     findByBookId(String bookid);
 		
 		@Query(value = "update tbl_book set book_type=?1,book_pubname=?2,book_price=?3,book_amount=?4 where book_name=?5 ", nativeQuery = true)
 		@Transactional

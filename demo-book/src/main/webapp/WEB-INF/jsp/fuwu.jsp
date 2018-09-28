@@ -190,7 +190,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<c:forEach items="${book }" var="u">		
 							<ul class="list">
 									<li>
-									<a href="single.html">
+									<a href="single.action?bookId=${u.bookId}">
 									<img src="${u.bookPhoto }" title="" />
 									<section class="list-left">
 									<h5 class="title" style="color:orange;">${u.bookName }</h5>

@@ -121,7 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<h2 class="head text-center">忘记密码</h2>
 			<section id="hire">    
-				<form id="filldetails" action="forgetss.do" method="post"
+				<form id="filldetails" action="forgetss.do" method="post"   
 			           enctype="multipart/form-data">
 					  <div class="field name-box">
 							<input type="password" id="pwd" name="pwd" placeholder="请输入您的新密码"/>
@@ -130,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  </div>
 					  <hr>
 					  <div class="field name-box">
-							<input type="password" id="pwd" name="pwds" placeholder="请再次输入您的新密码"/>
+							<input type="password" id="pwd1" name="pwds" placeholder="请再次输入您的新密码"/>
 							<label for="name">确认新密码</label>
 							<span class="ss-icon">check</span>
 					  </div>
